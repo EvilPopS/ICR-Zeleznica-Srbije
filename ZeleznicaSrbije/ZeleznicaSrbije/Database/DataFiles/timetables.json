@@ -1,0 +1,13 @@
+{
+  "NextInd": 1,
+  "Entities": [
+    {
+      "Id": 0,
+      "TrainServiceId": 0,
+      "TrainId": 0,
+      "Start": "02:59:04.2940554",
+      "End": "02:59:04.3000395",
+      "IsDeleted": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "NextInd": 1,
+  "Entities": [
+    {
+      "Id": 0,
+      "Name": "Marko",
+      "Surname": "Markovic",
+      "Email": "user1@gmail.com",
+      "Password": "sifra123",
+      "Tickets": []
+    }
+  ]
+}

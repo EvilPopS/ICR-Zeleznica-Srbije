@@ -1,0 +1,14 @@
+{
+  "NextInd": 1,
+  "Entities": [
+    {
+      "Id": 0,
+      "PlaceStart": "Novi Sad",
+      "PlaceEnd": "Beograd",
+      "TimetableInds": [
+        0
+      ],
+      "IsDeleted": false
+    }
+  ]
+}

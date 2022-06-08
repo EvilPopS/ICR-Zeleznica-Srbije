@@ -1,0 +1,11 @@
+{
+  "NextInd": 1,
+  "Entities": [
+    {
+      "Id": 0,
+      "TrainNumber": "2411",
+      "Capacity": 60,
+      "IsDeleted": false
+    }
+  ]
+}
