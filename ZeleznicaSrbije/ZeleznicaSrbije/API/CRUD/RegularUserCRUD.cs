@@ -10,10 +10,17 @@ using ZeleznicaSrbije.Database.Repositories;
 namespace ZeleznicaSrbije.API.CRUD {
     internal class RegularUserCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "regular_users.json";
-        private Repository<RegularUser> users;
+        private Repository<RegularUser> _users;
 
         public RegularUserCRUD() {
-            users = FileReaderWriter.ReadFile<RegularUser>(FILE_PATH);
+            _users = FileReaderWriter.ReadFile<RegularUser>(FILE_PATH);
+        }
+
+        public RegularUser GetByEmail(string email) {
+            foreach (var user in _users.Entities)
+                if (user.Email == email)
+                    return user;
+            return null;
         }
     }
 }

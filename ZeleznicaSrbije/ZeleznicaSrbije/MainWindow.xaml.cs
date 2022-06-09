@@ -17,8 +17,27 @@ using ZeleznicaSrbije.API.CRUD;
 namespace ZeleznicaSrbije {
 
     public partial class MainWindow : Window {
+        private LoginRegisterMM loginRegisterMM;
+
+
         public MainWindow() {
             InitializeComponent();
+            loginRegisterMM = new LoginRegisterMM();
+            loginRegisterMM.NavBarClicked += LoadNewContentPage;
+            NavBar.Content = loginRegisterMM;
+            LoadNewContentPage("LOGIN");
+        }
+
+
+        public void LoadNewContentPage(string obj) {
+            switch(obj) {
+                case "LOGIN":
+                    WinContent.Content = new LoginPage();
+                    break;
+                case "REGISTER":
+                    WinContent.Content = new RegisterPage();
+                    break;
+            }
         }
     }
 }

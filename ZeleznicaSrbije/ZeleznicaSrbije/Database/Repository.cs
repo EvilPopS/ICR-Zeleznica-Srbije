@@ -7,11 +7,6 @@ namespace ZeleznicaSrbije.Database.Repositories {
         private List<T> entities;
 
 
-        public Repository() {
-            nextInd = 0;
-            entities = new List<T>();
-        }
-
         public void AddEntity(T entity) { 
             nextInd++;
             entities.Add(entity); 
