@@ -19,8 +19,18 @@
             <RowDefinition Height="12*" />
         </Grid.RowDefinitions>
         
-        <Frame x:Name="NavBar" Source="LoginRegisterMM.xaml" Grid.Row="0"/>
-        <Frame x:Name="WinContent" Grid.Row="1"/>
+        <Frame 
+            x:Name="NavBar"
+            Grid.Row="0"
+            BorderBrush="Black"
+            BorderThickness="0 0 0 1"
+            NavigationUIVisibility="Hidden"
+        />
+        <Frame 
+            x:Name="WinContent" 
+            Grid.Row="1"
+            NavigationUIVisibility="Hidden"
+        />
 
     </Grid>
 </Window>

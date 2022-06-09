@@ -5,10 +5,17 @@ using ZeleznicaSrbije.Database.Repositories;
 namespace ZeleznicaSrbije.API.CRUD {
     internal class ManagerCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "managers.json";
-        private Repository<Manager> managers;
+        private Repository<Manager> _managers;
 
         public ManagerCRUD() {
-            managers = FileReaderWriter.ReadFile<Manager>(FILE_PATH);
+            _managers = FileReaderWriter.ReadFile<Manager>(FILE_PATH);
+        }
+
+        public Manager GetByEmail(string email) {
+            foreach (var manager in _managers.Entities)
+                if (manager.Email == email)
+                    return manager;
+            return null;
         }
     }
 }

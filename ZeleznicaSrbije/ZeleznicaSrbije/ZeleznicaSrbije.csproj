@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7AC973D6-11EC-456E-BF70-1ECD8B259675}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>ZeleznicaSrbije</RootNamespace>
     <AssemblyName>ZeleznicaSrbije</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
@@ -159,7 +160,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="API\Services\" />
+    <Resource Include="Assets\Images\warning-sign-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -175,6 +176,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\train-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\registration-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\password-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\email-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

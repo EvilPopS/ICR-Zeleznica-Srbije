@@ -14,7 +14,7 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <RadioButton Content="LOGIN" x:Name="LoginRB"
+        <RadioButton x:Name="LoginRB"
                     Grid.Column="0"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Center"
@@ -23,12 +23,18 @@
                     Foreground="Black"
                     FontWeight="Bold"
                     FontSize="18"
-                    IsChecked="True"
+                    IsChecked="True" Checked="LoginRB_Checked"
+
             >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="./Assets/Images/login-icon.png" Width="38" Height="26" />
+                <TextBlock Height="19">LOGOVANJE</TextBlock>
+            </StackPanel>
+
             <RadioButton.Style>
                 <Style TargetType="RadioButton">
                     <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background"  Value="White"/>
+                    <Setter Property="Background" Value="White"/>
                     <Setter Property="Cursor" Value="Hand"/>
 
                     <Style.Triggers>
@@ -51,7 +57,7 @@
             </RadioButton.Template>
         </RadioButton>
 
-        <RadioButton Content="REGISTER"
+        <RadioButton 
                     Grid.Column="1"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Center"
@@ -59,8 +65,13 @@
                     VerticalContentAlignment="Center"
                     Foreground="Black"
                     FontWeight="Bold"
-                    FontSize="18"
+                    FontSize="18" Checked="RadioButton_Checked"
             >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="./Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <TextBlock Height="19">REGISTRACIJA</TextBlock>
+            </StackPanel>
+            
             <RadioButton.Style>
                 <Style TargetType="RadioButton">
                     <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
