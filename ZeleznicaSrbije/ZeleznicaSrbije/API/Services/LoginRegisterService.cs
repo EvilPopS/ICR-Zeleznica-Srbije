@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZeleznicaSrbije.API.CRUD;
+﻿using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.API.Services {
@@ -28,6 +23,14 @@ namespace ZeleznicaSrbije.API.Services {
             if (user != null && user.Password == password)
                 return true;
             return false;
+        }
+
+        public bool RegisterNewUser(string name, string surname, string email, string password) {
+            if (_regularUserCRUD.GetByEmail(email) != null)
+                return false;
+
+            _regularUserCRUD.CreateNewUser(name, surname, email, password);
+            return true;
         }
     }
 }

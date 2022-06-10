@@ -8,10 +8,12 @@
     mc:Ignorable="d"
     Title="Železnica Srbije" 
     Icon="./Assets/Images/train-icon.jpg"
-    Height="430" 
-    Width="750"
-    MaxHeight="430"
-    MaxWidth="750"
+    Height="440" 
+    Width="770"
+    MaxHeight="440"
+    MaxWidth="770"
+    MinHeight="430"
+    MinWidth="560"
 >
     <Grid>
         <Grid.RowDefinitions>

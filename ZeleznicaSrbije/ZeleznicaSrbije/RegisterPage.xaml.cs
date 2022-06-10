@@ -1,25 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ZeleznicaSrbije.API.Services;
 
 namespace ZeleznicaSrbije {
-    /// <summary>
-    /// Interaction logic for RegisterPage.xaml
-    /// </summary>
-    public partial class RegisterPage : Page {
+    public partial class RegisterPage : ContentPage {
         public RegisterPage() {
             InitializeComponent();
+        }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e) {
+            string name = nameInpField.Text;
+            string surname = surnameInpField.Text;
+            string email = emailInpField.Text;
+            string password = passwordInpField.Password.ToString();
+
+            if (name == "" || surname == "" || email == "" || password == "")
+                ShowErrorPopUp("Sva polja forme za registraciju moraju da budu popunjena.");
+
+            if (new LoginRegisterService().RegisterNewUser(name, surname, email, password))
+                Console.WriteLine("Prebaci se na login page");
+            else
+                ShowErrorPopUp("Email je već zauzet.\nPokušajte nešto drugo.");
+        }
+
+        private void ShowErrorPopUp(string message) {
+            errorPopUpText.Text = message;
+            errorPopUp.IsOpen = true;
+        }
+
+        private void CloseErrorPopUp(object sender, RoutedEventArgs e) {
+            errorPopUpText.Text = "";
+            errorPopUp.IsOpen = false;
         }
     }
 }

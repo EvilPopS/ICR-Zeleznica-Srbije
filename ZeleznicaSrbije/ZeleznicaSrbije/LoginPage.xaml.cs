@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using ZeleznicaSrbije.API.Services;
 
 namespace ZeleznicaSrbije {
-    public partial class LoginPage : Page {
+    public partial class LoginPage : ContentPage{
         public LoginPage() {
             InitializeComponent();
         }

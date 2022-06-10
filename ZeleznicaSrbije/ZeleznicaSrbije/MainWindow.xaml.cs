@@ -17,14 +17,17 @@ using ZeleznicaSrbije.API.CRUD;
 namespace ZeleznicaSrbije {
 
     public partial class MainWindow : Window {
-        private LoginRegisterMM loginRegisterMM;
-
+        private LoginRegisterMM _loginRegisterMM;
+        private ContentPage _contentPage;
 
         public MainWindow() {
             InitializeComponent();
-            loginRegisterMM = new LoginRegisterMM();
-            loginRegisterMM.NavBarClicked += LoadNewContentPage;
-            NavBar.Content = loginRegisterMM;
+            _loginRegisterMM = new LoginRegisterMM();
+            _contentPage = new LoginPage();
+            _contentPage.PageEvents += LoadNewContentPage;
+            _loginRegisterMM.NavBarClicked += LoadNewContentPage;
+
+            NavBar.Content = _loginRegisterMM;
             LoadNewContentPage("LOGIN");
         }
 
