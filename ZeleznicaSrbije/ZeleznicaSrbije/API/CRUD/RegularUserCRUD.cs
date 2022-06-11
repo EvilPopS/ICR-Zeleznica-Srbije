@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
@@ -22,5 +18,22 @@ namespace ZeleznicaSrbije.API.CRUD {
                     return user;
             return null;
         }
+
+        public void CreateNewUser(string name, string surname, string email, string password) {
+            _users.AddEntity(
+                new RegularUser() {
+                    Id = _users.NextInd,
+                    Name = name,
+                    Surname = surname,
+                    Email = email,
+                    Password = password,
+                    Tickets = new List<Ticket>()
+                }
+            );
+
+            FileReaderWriter.UpdateFile(FILE_PATH, _users);
+        }
+
+
     }
 }

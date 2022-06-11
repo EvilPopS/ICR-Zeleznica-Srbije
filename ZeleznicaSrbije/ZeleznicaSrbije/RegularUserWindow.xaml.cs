@@ -10,24 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ZeleznicaSrbije {
-
-    public partial class LoginRegisterMM : Page {
-        public event Action<string> NavBarClicked;
-
-        public LoginRegisterMM() {
+    /// <summary>
+    /// Interaction logic for RegularUserWindow.xaml
+    /// </summary>
+    public partial class RegularUserWindow : Window {
+        public RegularUserWindow() {
             InitializeComponent();
-        }
-
-        private void LoginRB_Checked(object sender, RoutedEventArgs e) {
-            NavBarClicked?.Invoke("LOGIN");
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e) {
-            NavBarClicked?.Invoke("REGISTER");
         }
     }
 }

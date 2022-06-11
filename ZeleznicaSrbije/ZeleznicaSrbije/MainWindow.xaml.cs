@@ -1,4 +1,3 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
+using ZeleznicaSrbije.API.Services;
 
 namespace ZeleznicaSrbije {
 
@@ -22,10 +22,18 @@ namespace ZeleznicaSrbije {
         private LoginRegisterMM loginRegisterMM;
         private ManagerMM managerMM;
         private TrainCRUD trainCRUD;
+
         List<Train> trainList = new List<Train>();
+
+
+        private readonly LoginRegisterMM _loginRegisterMM;
+        private readonly LoginRegisterService _loginRegisterService;
+
 
         
         public MainWindow() {
+            _loginRegisterService = new LoginRegisterService();
+
             InitializeComponent();
             //loginRegisterMM = new LoginRegisterMM();
             //loginRegisterMM.NavBarClicked += LoadNewContentPage;
@@ -37,17 +45,16 @@ namespace ZeleznicaSrbije {
             managerMM.NavBarClicked += LoadNewContentPage;
             NavBar.Content = managerMM;
             LoadNewContentPage("MANAGER_PROFILE_PAGE");
-            
         }
 
 
         public void LoadNewContentPage(string obj) {
             switch(obj) {
                 case "LOGIN":
-                    WinContent.Content = new LoginPage();
+                    WinContent.Content = new LoginPage(this, _loginRegisterService);
                     break;
                 case "REGISTER":
-                    WinContent.Content = new RegisterPage();
+                    WinContent.Content = new RegisterPage(_loginRegisterService);
                     break;
                 case "MANAGER_PROFILE_PAGE":
                     WinContent.Content = new ManagerProfilePage();
