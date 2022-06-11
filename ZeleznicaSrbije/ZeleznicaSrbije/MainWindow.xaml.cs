@@ -22,9 +22,9 @@ namespace ZeleznicaSrbije {
         private LoginRegisterMM loginRegisterMM;
         private ManagerMM managerMM;
         private TrainCRUD trainCRUD;
-        ObservableCollection<Train> trainList = new ObservableCollection<Train>();
+        List<Train> trainList = new List<Train>();
 
-
+        
         public MainWindow() {
             InitializeComponent();
             //loginRegisterMM = new LoginRegisterMM();
