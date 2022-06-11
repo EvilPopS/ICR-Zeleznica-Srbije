@@ -103,6 +103,9 @@
     <Compile Include="ManagerPages\ManagerProfilePage.xaml.cs">
       <DependentUpon>ManagerProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPages\OkPopUp.xaml.cs">
+      <DependentUpon>OkPopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\TrainsPage.xaml.cs">
       <DependentUpon>TrainsPage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerPages\ManagerProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\OkPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

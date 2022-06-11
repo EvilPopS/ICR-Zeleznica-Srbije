@@ -36,9 +36,9 @@ namespace ZeleznicaSrbije.ManagerPages
 
         public void DeleteTrainBtn_Click(object sender, RoutedEventArgs e)
         {
-            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp("Da li sigurno da zelite da obrisete voz " + ((Train)TrainsData.SelectedItem).TrainNumber + " ?");
+            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp("Da li sigurno da želite da obrišete voz " + ((Train)TrainsData.SelectedItem).TrainNumber + "?");
             deletePopUp.YesClicked += PopUpClicked;
-            deletePopUp.Show();
+            deletePopUp.ShowDialog();
         }
 
         public void PopUpClicked(bool yes)
@@ -48,8 +48,15 @@ namespace ZeleznicaSrbije.ManagerPages
                 Train selTrain = ((Train)TrainsData.SelectedItem);
                 _trainsService.DeleteTrain(selTrain.TrainNumber);
                 TrainsCollection.Remove(selTrain);
+
+                // sad ok pop up
+                OkPopUp okPopUp = new OkPopUp("Uspešno ste obrisali voz " +
+                    selTrain.TrainNumber + ".");
+                okPopUp.ShowDialog();
+
             }
         }
+
 
         
     }
