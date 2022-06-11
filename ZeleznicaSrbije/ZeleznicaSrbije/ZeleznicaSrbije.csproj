@@ -77,14 +77,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="API\Services\LoginRegisterService.cs" />
-    <Compile Include="RegisterPage.xaml.cs">
+    <Compile Include="ManagerWindow.xaml.cs">
+      <DependentUpon>ManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="LoginPage.xaml">
+    <Compile Include="RegularUserWindow.xaml.cs">
+      <DependentUpon>RegularUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindowPages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginRegisterMM.xaml">
+    <Page Include="MainWindowPages\LoginRegisterMM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,17 +117,25 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="Database\FileReaderWriter.cs" />
     <Compile Include="Database\Repository.cs" />
-    <Compile Include="LoginPage.xaml.cs">
+    <Compile Include="MainWindowPages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginRegisterMM.xaml.cs">
+    <Compile Include="MainWindowPages\LoginRegisterMM.xaml.cs">
       <DependentUpon>LoginRegisterMM.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RegisterPage.xaml">
+    <Page Include="ManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowPages\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegularUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +202,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\email-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\sur-name-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ManagerPages\" />
+    <Folder Include="RegularUserPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\manager-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\regular-user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\task-success-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
