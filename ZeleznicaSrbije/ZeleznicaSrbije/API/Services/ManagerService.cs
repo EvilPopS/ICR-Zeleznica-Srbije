@@ -8,7 +8,7 @@ using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.API.Services
 {
-    internal class ManagerService
+    public class ManagerService
     {
         ManagerCRUD managerCRUD;
 

@@ -5,7 +5,7 @@ using ZeleznicaSrbije.Database.Repositories;
 namespace ZeleznicaSrbije.API.CRUD {
     internal class ManagerCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "managers.json";
-        private Repository<Manager> _managers;
+        private readonly Repository<Manager> _managers;
 
         public ManagerCRUD() {
             _managers = FileReaderWriter.ReadFile<Manager>(FILE_PATH);

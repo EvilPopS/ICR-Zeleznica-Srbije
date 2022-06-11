@@ -28,7 +28,7 @@
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Label FontSize="15" FontWeight="Bold" Content="E-MAIL  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-            <Image Source="./Assets/Images/email-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+            <Image Source="../Assets/Images/email-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
         </StackPanel>
         <TextBox x:Name="emailInpField" Grid.Column="1" Grid.Row="2" BorderBrush="Black" 
                  HorizontalAlignment="Stretch" VerticalAlignment="Top" />
@@ -36,7 +36,7 @@
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Label FontSize="15" FontWeight="Bold" Height="30" Content="ŠIFRA  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-            <Image Source="./Assets/Images/password-icon.png" Width="40" Height="30" VerticalAlignment="Bottom"/>
+            <Image Source="../Assets/Images/password-icon.png" Width="40" Height="30" VerticalAlignment="Bottom"/>
         </StackPanel>
         <PasswordBox x:Name="passwordInpField" Grid.Column="1" Grid.Row="4" BorderBrush="Black" 
                      HorizontalAlignment="Stretch" PasswordChar="*" VerticalAlignment="Top"/>

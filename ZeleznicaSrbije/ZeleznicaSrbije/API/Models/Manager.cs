@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ZeleznicaSrbije.API.Models {
-    internal class Manager {
+    public class Manager {
         private int id;
         private string name;
         private string surname;

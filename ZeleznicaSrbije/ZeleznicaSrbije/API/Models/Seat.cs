@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ZeleznicaSrbije.API.Models
-{
-    internal class Seat
+﻿namespace ZeleznicaSrbije.API.Models {
+    public class Seat
     {
         private int seatNumber;
         private bool available;

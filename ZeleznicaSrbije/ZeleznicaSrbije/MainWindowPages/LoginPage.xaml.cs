@@ -13,6 +13,8 @@ namespace ZeleznicaSrbije.MainWindowPages {
             InitializeComponent();
             _wind = wind;
             _loginService = loginService;
+            emailInpField.Text = "abc@gmail.com";
+            passwordInpField.Password = "sifra123";
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e) {
@@ -22,13 +24,16 @@ namespace ZeleznicaSrbije.MainWindowPages {
             if (email == "" || password == "")
                 ShowErrorPopUp("Oba polja moraju biti popunjena!");
 
-            if (_loginService.TryLoginAsManager(email, password))
+            if (_loginService.TryLoginAsManager(email, password)) {
                 new ManagerWindow().Show();
-            else if (_loginService.TryLoginAsRegularUser(email, password))
+                _wind.Close();
+            }
+            else if (_loginService.TryLoginAsRegularUser(email, password)) {
                 new RegularUserWindow().Show();
+                _wind.Close();
+            }
             else
                 ShowErrorPopUp("Uneti podaci nisu tačni. \n Pokušajte ponovo.");
-            _wind.Close();
         }
         
         private void ShowErrorPopUp(string message) {

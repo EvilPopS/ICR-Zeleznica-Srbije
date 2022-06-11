@@ -8,12 +8,12 @@ using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
 
 namespace ZeleznicaSrbije.API.CRUD {
-    internal class TrainServiceCRUD {
+    public class TrainServiceCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "train_services.json";
-        private Repository<TrainService> trainServices;
+        private readonly Repository<TrainService> _trainServices;
 
         public TrainServiceCRUD() {
-            trainServices = FileReaderWriter.ReadFile<TrainService>(FILE_PATH);
+            _trainServices = FileReaderWriter.ReadFile<TrainService>(FILE_PATH);
         }
     }
 }

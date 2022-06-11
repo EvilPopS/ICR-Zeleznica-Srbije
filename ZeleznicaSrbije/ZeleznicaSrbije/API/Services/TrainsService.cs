@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
 
-namespace ZeleznicaSrbije.API.Services
-{
-    internal class TrainsService
+namespace ZeleznicaSrbije.API.Services {
+    public class TrainsService
     {
-
-        TrainCRUD trainCRUD;
+        private readonly TrainCRUD _trainCRUD;
 
         public TrainsService()
         {
-            trainCRUD = new TrainCRUD();
+            _trainCRUD = new TrainCRUD();
         }
 
-        public List<Train> getAllTrains()
+        public List<Train> GetAllTrains()
         {
-            return trainCRUD.getAllTrains();
+            return _trainCRUD.GetAllTrains();
         }
 
-        public bool deleteTrain(string trainNumber)
+        public bool DeleteTrain(string trainNumber)
         {
-            return trainCRUD.deleteTrain(trainNumber); 
+            return _trainCRUD.DeleteTrain(trainNumber); 
         }
     }
 }

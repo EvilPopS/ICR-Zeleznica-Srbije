@@ -6,7 +6,7 @@ using ZeleznicaSrbije.Database.Repositories;
 namespace ZeleznicaSrbije.API.CRUD {
     internal class RegularUserCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "regular_users.json";
-        private Repository<RegularUser> _users;
+        private readonly Repository<RegularUser> _users;
 
         public RegularUserCRUD() {
             _users = FileReaderWriter.ReadFile<RegularUser>(FILE_PATH);

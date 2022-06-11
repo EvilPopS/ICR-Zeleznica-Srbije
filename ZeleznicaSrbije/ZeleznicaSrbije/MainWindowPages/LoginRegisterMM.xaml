@@ -27,7 +27,7 @@
 
             >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="./Assets/Images/login-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/login-icon.png" Width="38" Height="26" />
                 <TextBlock Height="19">LOGOVANJE</TextBlock>
             </StackPanel>
 
@@ -68,7 +68,7 @@
                     FontSize="18" Checked="RadioButton_Checked"
             >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="./Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
                 <TextBlock Height="19">REGISTRACIJA</TextBlock>
             </StackPanel>
             

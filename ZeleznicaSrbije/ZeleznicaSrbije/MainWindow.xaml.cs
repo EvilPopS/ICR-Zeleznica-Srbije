@@ -1,50 +1,22 @@
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ZeleznicaSrbije.API.CRUD;
-using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije {
 
     public partial class MainWindow : Window {
-        private LoginRegisterMM loginRegisterMM;
-        private ManagerMM managerMM;
-        private TrainCRUD trainCRUD;
-
-        List<Train> trainList = new List<Train>();
-
-
         private readonly LoginRegisterMM _loginRegisterMM;
         private readonly LoginRegisterService _loginRegisterService;
-
 
         
         public MainWindow() {
             _loginRegisterService = new LoginRegisterService();
-
             InitializeComponent();
-            //loginRegisterMM = new LoginRegisterMM();
-            //loginRegisterMM.NavBarClicked += LoadNewContentPage;
-            //NavBar.Content = loginRegisterMM;
-            //LoadNewContentPage("LOGIN");
-            trainCRUD = new TrainCRUD();
-            trainList = trainCRUD.getAllTrains();
-            managerMM = new ManagerMM();
-            managerMM.NavBarClicked += LoadNewContentPage;
-            NavBar.Content = managerMM;
-            LoadNewContentPage("MANAGER_PROFILE_PAGE");
+            
+            _loginRegisterMM = new LoginRegisterMM();
+            _loginRegisterMM.NavBarClicked += LoadNewContentPage;
+            NavBar.Content = _loginRegisterMM;
+            LoadNewContentPage("LOGIN");
         }
 
 
@@ -56,14 +28,6 @@ namespace ZeleznicaSrbije {
                 case "REGISTER":
                     WinContent.Content = new RegisterPage(_loginRegisterService);
                     break;
-                case "MANAGER_PROFILE_PAGE":
-                    WinContent.Content = new ManagerProfilePage();
-                    break;
-                case "TRAINS_PAGE":
-                    WinContent.Content = new TrainsPage();
-                    break;
-
-
             }
         }
     }

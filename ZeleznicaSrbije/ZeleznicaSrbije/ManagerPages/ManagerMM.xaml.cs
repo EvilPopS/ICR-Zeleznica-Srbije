@@ -13,25 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ZeleznicaSrbije
+namespace ZeleznicaSrbije.ManagerPages
 {
-    /// <summary>
-    /// Interaction logic for ManagerMM.xaml
-    /// </summary>
     public partial class ManagerMM : Page
-        
     {
         public event Action<string> NavBarClicked;
+
+
         public ManagerMM()
         {
             InitializeComponent();
-
-
         }
 
         private void Profile_Checked(object sender, RoutedEventArgs e)
         {
-            NavBarClicked?.Invoke("MANAGER_PROFILE_PAGE");
+            NavBarClicked?.Invoke("PROFILE_PAGE");
         }
 
         private void TrainSchedule_Checked(object sender, RoutedEventArgs e)

@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZeleznicaSrbije.API.Models;
+﻿using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
 
 namespace ZeleznicaSrbije.API.CRUD {
-    internal class TimetableCRUD {
+    public class TimetableCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "timetables.json";
-        private Repository<Timetable> timetables;
+        private readonly Repository<Timetable> _timetables;
 
         public TimetableCRUD() {
-            timetables = FileReaderWriter.ReadFile<Timetable>(FILE_PATH);
+            _timetables = FileReaderWriter.ReadFile<Timetable>(FILE_PATH);
         }
     }
 }

@@ -3,8 +3,8 @@
   "Entities": [
     {
       "Id": 0,
-      "TrainNumber": "2241",
-      "Capacity": 60,
+      "TrainNumber": "7592",
+      "Capacity": 90,
       "IsDeleted": false,
       "Seats": [
         {
@@ -19,7 +19,6 @@
         }
       ]
     },
-
     {
       "Id": 1,
       "TrainNumber": "7792",
@@ -38,6 +37,5 @@
         }
       ]
     }
-
   ]
 }
