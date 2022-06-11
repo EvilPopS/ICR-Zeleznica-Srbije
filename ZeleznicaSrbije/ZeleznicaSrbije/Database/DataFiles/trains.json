@@ -1,11 +1,44 @@
 {
-  "NextInd": 1,
+  "NextInd": 2,
   "Entities": [
     {
       "Id": 0,
       "TrainNumber": "2411",
       "Capacity": 60,
-      "IsDeleted": false
+      "IsDeleted": false,
+      "Seats": [
+        {
+          "SeatNumber": 10,
+          "UserId": 1,
+          "IsAvailable": false
+
+        },
+        {
+          "SeatNumber": 15,
+          "UserId": 5,
+          "IsAvailable": false
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "TrainNumber": "7792",
+      "Capacity": 90,
+      "IsDeleted": false,
+      "Seats": [
+        {
+          "Row": 7,
+          "Column": "A",
+          "IsAvailable": false
+
+        },
+        {
+          "Row": 3,
+          "Column": "B",
+          "IsAvailable": false
+        }
+      ]
     }
+
   ]
 }
