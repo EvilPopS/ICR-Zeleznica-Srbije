@@ -17,13 +17,12 @@ namespace ZeleznicaSrbije.API.CRUD {
             trains = FileReaderWriter.ReadFile<Train>(FILE_PATH);
         }
 
-        public List<Train> getAllTrains() {
-            List<Train> retVal = new List<Train>(); 
+        public ObservableCollection<Train> getAllTrains() {
+            ObservableCollection<Train> retVal = new ObservableCollection<Train>(); 
             foreach (var train in trains.Entities)
             {
                 Console.WriteLine(train.TrainNumber);
                 retVal.Add(train);
-                
             }    
             return retVal;
         }
@@ -34,10 +33,9 @@ namespace ZeleznicaSrbije.API.CRUD {
                 if(train.TrainNumber == trainNumber)
                 {
                     trains.Entities.Remove(train);
-                    FileReaderWriter.UpdateFile(FILE_PATH, trains);
-                    return true;//aj dace bog
+                    return true;
                 }
-            } 
+            }
             return false;
         }
     }

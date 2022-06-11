@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -14,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
 
 namespace ZeleznicaSrbije
@@ -27,23 +25,6 @@ namespace ZeleznicaSrbije
         TrainsService trainsService;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        ObservableCollection<Train> TrainsCollection { get; set; }
-
-        private ICollectionView _View;
-        public ICollectionView View
-        {
-            get
-            {
-                return _View;
-            }
-            set
-            {
-                _View = value;
-                OnPropertyChanged("View");
-            }
-        }
-
-
         protected void OnPropertyChanged(string info)
         {
             if (PropertyChanged != null)
@@ -57,34 +38,18 @@ namespace ZeleznicaSrbije
         {
             trainsService = new TrainsService();
             InitializeComponent();
-            
-            TrainsCollection = new ObservableCollection<Train> (trainsService.getAllTrains());
-            TrainsData.ItemsSource = TrainsCollection;
-        } 
-        
+            Trains.ItemsSource = trainsService.getAllTrains();
+        }
 
+        
 
         public void DeleteTrainBtn_Click(object sender, RoutedEventArgs e)
         {
-            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp("Da li sigurno da zelite da obrisete voz " + ((Train)TrainsData.SelectedItem).TrainNumber + " ?");
-            deletePopUp.yesClicked += PopUpClicked;
+            var selected = Trains.SelectedItem;
+            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp(Trains.SelectedItem, "train");
+
             deletePopUp.Show();
-            //TrainsCollection = new ObservableCollection<Train> (trainsService.getAllTrains());
-            //View = CollectionViewSource.GetDefaultView(TrainsCollection);
-
-
-    
+            
         }
-
-        public void PopUpClicked(bool yes)
-        {
-            if (yes)
-            {
-                trainsService.deleteTrain(((Train)TrainsData.SelectedItem).TrainNumber);
-                TrainsCollection.Remove((Train)TrainsData.SelectedItem);
-            }
-        }
-
-        
     }
 }

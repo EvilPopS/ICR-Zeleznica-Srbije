@@ -25,7 +25,7 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <DataGrid Margin="0 60 0 0" x:Name="TrainsData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}">
+        <DataGrid Margin="0 60 0 0" x:Name="Trains" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
                 <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="*">

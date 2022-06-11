@@ -21,28 +21,55 @@ namespace ZeleznicaSrbije
     /// </summary>
     public partial class ConfirmTrainDeletePopUp : Window
     {
-        public event Action<bool> yesClicked;
-
-        public ConfirmTrainDeletePopUp(string popUpMessage)
+        TrainsService trainsService;
+        Train trainToBeDeleted;
+        string activePage;
+        public ConfirmTrainDeletePopUp()
         {
+            trainsService = new TrainsService();
             InitializeComponent();
-            trainDeleteTextBlock.Text = popUpMessage;
         }
 
-        private void Yes_Clicked(object sender, RoutedEventArgs e)
-        {
-            yesClicked?.Invoke(true);
-            this.Close();
-        }
-
-        private void No_Clicked(object sender, RoutedEventArgs e)
+        public ConfirmTrainDeletePopUp(object selectedItem, string page)
         {
 
-            this.Close();
+
+
+            trainsService = new TrainsService();
+            InitializeComponent();
+            activePage = page;
+
+            switch (activePage)
+            {
+                case "train":
+                    trainToBeDeleted = (Train)selectedItem;
+                    trainDeleteTextBlock.Text = "Da li ste sigurni da zelite da obrisete voz " + trainToBeDeleted.TrainNumber + " ?";
+                    break;
+
+            }
+
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            switch (activePage)
+            {
+                case "train":
+                    if (trainsService.deleteTrain(trainToBeDeleted.TrainNumber))
+                    {
+                        // ide pop up successfull
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // neki error popup
+                    }
+                    break;
+
+            }
 
 
 
+        }
     }
 }
