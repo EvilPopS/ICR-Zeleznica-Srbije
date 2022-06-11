@@ -112,6 +112,12 @@
     <Compile Include="MainWindowPages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegularUserPages\RegularUserMM.xaml.cs">
+      <DependentUpon>RegularUserMM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegularUserPages\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
@@ -176,7 +182,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegularUserPages\RegularUserMM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegularUserPages\UserProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegularUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\NavBarResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,7 +274,7 @@
     <Resource Include="Assets\Images\sur-name-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RegularUserPages\" />
+    <Resource Include="Assets\Images\profile-icon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\manager-icon.png" />
@@ -266,6 +284,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\task-success-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\timetable-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\lines-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\tickets-icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />

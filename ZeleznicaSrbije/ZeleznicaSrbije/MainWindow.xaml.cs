@@ -20,8 +20,8 @@ namespace ZeleznicaSrbije {
         }
 
 
-        public void LoadNewContentPage(string obj) {
-            switch(obj) {
+        public void LoadNewContentPage(string pageName) {
+            switch(pageName) {
                 case "LOGIN":
                     WinContent.Content = new LoginPage(this, _loginRegisterService);
                     break;
