@@ -57,7 +57,30 @@ namespace ZeleznicaSrbije.ManagerPages
             }
         }
 
+        private void addNewtrainButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddTrainWindow addTrainWindow = new AddTrainWindow();
+            addTrainWindow.addTrainClicked += addNewTrain;
+            addTrainWindow.ShowDialog();
+        }
 
-        
+        public void addNewTrain(Train newTrain)
+        {
+            _trainsService.AddTrain(newTrain);
+            TrainsCollection.Add(newTrain);
+
+            OkPopUp okPopUp = new OkPopUp("Uspešno ste dodali novi voz.");
+            okPopUp.ShowDialog();
+
+
+
+
+
+        }
+
+        private void TrainsData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine("sadsada");
+        }
     }
 }

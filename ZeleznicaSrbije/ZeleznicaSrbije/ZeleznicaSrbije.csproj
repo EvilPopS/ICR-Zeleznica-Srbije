@@ -94,6 +94,9 @@
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
+    <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
+      <DependentUpon>AddTrainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\ConfirmTrainDeletePopUp.xaml.cs">
       <DependentUpon>ConfirmTrainDeletePopUp.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ManagerPages\AddTrainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\ConfirmTrainDeletePopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

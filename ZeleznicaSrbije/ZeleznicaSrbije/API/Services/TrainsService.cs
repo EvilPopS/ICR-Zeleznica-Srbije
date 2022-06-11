@@ -21,5 +21,10 @@ namespace ZeleznicaSrbije.API.Services {
         {
             return _trainCRUD.DeleteTrain(trainNumber); 
         }
+
+        public void AddTrain(Train train)
+        {
+            _trainCRUD.addNewTrain(train);
+        }
     }
 }

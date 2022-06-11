@@ -13,6 +13,7 @@ namespace ZeleznicaSrbije.API.CRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "trains.json";
         private readonly Repository<Train> _trains;
 
+
         public TrainCRUD() {
             _trains = FileReaderWriter.ReadFile<Train>(FILE_PATH);
         }
@@ -32,6 +33,13 @@ namespace ZeleznicaSrbije.API.CRUD {
                 }
             } 
             return false;
+        }
+
+        public void addNewTrain(Train train)
+        {
+            train.Id = _trains.NextInd;
+            _trains.AddEntity(train);
+            FileReaderWriter.UpdateFile(FILE_PATH, _trains);
         }
     }
 }
