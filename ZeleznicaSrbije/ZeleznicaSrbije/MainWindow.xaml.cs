@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
-using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije {
 
@@ -23,11 +22,15 @@ namespace ZeleznicaSrbije {
         private LoginRegisterMM loginRegisterMM;
         private ManagerMM managerMM;
         private TrainCRUD trainCRUD;
-        ObservableCollection<Train> trainList = new ObservableCollection<Train>();
+
+        List<Train> trainList = new List<Train>();
+
 
         private readonly LoginRegisterMM _loginRegisterMM;
         private readonly LoginRegisterService _loginRegisterService;
 
+
+        
         public MainWindow() {
             _loginRegisterService = new LoginRegisterService();
 

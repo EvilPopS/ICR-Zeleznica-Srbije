@@ -32,13 +32,13 @@
                    />
 
         <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="yesButton" Style="{StaticResource yesButton}" Margin="30 10 0 10" Click="Button_Click">
+            <Button x:Name="yesButton" Style="{StaticResource yesButton}" Margin="30 10 0 10" Click="Yes_Clicked">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 0" Width="80">
                     <Icon:PackIconMaterial Kind="CheckBold" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
                     <TextBlock Text="Da" Margin="15 0 0 0" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Style="{StaticResource noButton}" Margin="50 10 0 10" HorizontalAlignment="Center">
+            <Button Style="{StaticResource noButton}" Margin="50 10 0 10" HorizontalAlignment="Center" Click="No_Clicked">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 0" Width="80">
                     <Icon:PackIconMaterial Kind="CloseThick" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
                     <TextBlock Text="Ne" Margin="15 0 0 0" HorizontalAlignment="Center"/>

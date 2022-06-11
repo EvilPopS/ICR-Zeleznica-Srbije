@@ -19,7 +19,7 @@ namespace ZeleznicaSrbije.API.Services
             trainCRUD = new TrainCRUD();
         }
 
-        public ObservableCollection<Train> getAllTrains()
+        public List<Train> getAllTrains()
         {
             return trainCRUD.getAllTrains();
         }
