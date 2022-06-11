@@ -1,4 +1,4 @@
-﻿<Page x:Class="ZeleznicaSrbije.RegisterPage"
+﻿ <Page x:Class="ZeleznicaSrbije.MainWindowPages.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,19 +6,17 @@
       xmlns:local="clr-namespace:ZeleznicaSrbije"
       mc:Ignorable="d" 
       d:DesignHeight="397" d:DesignWidth="750"
-      Title="RegisterPage">
+      Title="LoginPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.2*"/>
-            <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="1.2*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="1.6*"/>
             <RowDefinition Height="1.6*"/>
             <RowDefinition Height="1.6*"/>
@@ -28,40 +26,24 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-            <Label FontSize="15" FontWeight="Bold" Content="IME  -" 
-                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-            <Image Source="./Assets/Images/sur-name-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
-        </StackPanel>
-        <TextBox x:Name="nameInpField" Grid.Column="1" Grid.Row="2" BorderBrush="Black" 
-                 HorizontalAlignment="Stretch" VerticalAlignment="Top" />
-
-        <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-            <Label FontSize="15" FontWeight="Bold" Content="PREZIME  -" 
-                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-            <Image Source="./Assets/Images/sur-name-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
-        </StackPanel>
-        <TextBox x:Name="surnameInpField" Grid.Column="3" Grid.Row="2" BorderBrush="Black" 
-                 HorizontalAlignment="Stretch" VerticalAlignment="Top" />
-
-        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Label FontSize="15" FontWeight="Bold" Content="E-MAIL  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
             <Image Source="./Assets/Images/email-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <TextBox x:Name="emailInpField" Grid.Column="1" Grid.Row="4" BorderBrush="Black" 
+        <TextBox x:Name="emailInpField" Grid.Column="1" Grid.Row="2" BorderBrush="Black" 
                  HorizontalAlignment="Stretch" VerticalAlignment="Top" />
 
-        <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom">
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Label FontSize="15" FontWeight="Bold" Height="30" Content="ŠIFRA  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
             <Image Source="./Assets/Images/password-icon.png" Width="40" Height="30" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <PasswordBox x:Name="passwordInpField" Grid.Column="3" Grid.Row="4" BorderBrush="Black" 
+        <PasswordBox x:Name="passwordInpField" Grid.Column="1" Grid.Row="4" BorderBrush="Black" 
                      HorizontalAlignment="Stretch" PasswordChar="*" VerticalAlignment="Top"/>
 
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" FontSize="15" FontWeight="Black" Width="150" 
-                Content="REGISTRUJTE SE" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
-                Background="#FF919291" Click="RegisterBtn_Click">
+        <Button Grid.Column="1" Grid.Row="5" FontSize="15" FontWeight="Black" Width="140" 
+                Content="ULOGUJTE SE" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                Background="#FF919291" Click="LoginBtn_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="7"/>
@@ -106,6 +88,5 @@
                 </StackPanel>
             </Border>
         </Popup>
-        
     </Grid>
 </Page>

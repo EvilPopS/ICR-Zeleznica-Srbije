@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using ZeleznicaSrbije.API.Services;
 
-namespace ZeleznicaSrbije {
-    public partial class LoginPage : ContentPage{
-        public LoginPage() {
+namespace ZeleznicaSrbije.MainWindowPages {
+    public partial class LoginPage : Page {
+
+        private readonly MainWindow _wind;
+        private readonly LoginRegisterService _loginService;
+
+        public LoginPage(MainWindow wind, LoginRegisterService loginService) {
             InitializeComponent();
+            _wind = wind;
+            _loginService = loginService;
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e) {
@@ -15,15 +22,13 @@ namespace ZeleznicaSrbije {
             if (email == "" || password == "")
                 ShowErrorPopUp("Oba polja moraju biti popunjena!");
 
-            LoginRegisterService loginService = new LoginRegisterService();
-            if (loginService.TryLoginAsManager(email, password)) {
-                Console.WriteLine("Ulogovan kao menadzer");
-            }
-            else if (loginService.TryLoginAsRegularUser(email, password)) {
-                Console.WriteLine("Ulogovan kao korisnik");
-            }
+            if (_loginService.TryLoginAsManager(email, password))
+                new ManagerWindow().Show();
+            else if (_loginService.TryLoginAsRegularUser(email, password))
+                new RegularUserWindow().Show();
             else
                 ShowErrorPopUp("Uneti podaci nisu tačni. \n Pokušajte ponovo.");
+            _wind.Close();
         }
         
         private void ShowErrorPopUp(string message) {

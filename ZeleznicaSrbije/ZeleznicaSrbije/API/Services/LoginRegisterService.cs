@@ -2,7 +2,7 @@
 using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.API.Services {
-    internal class LoginRegisterService {
+    public class LoginRegisterService {
         private ManagerCRUD _managerCRUD;
         private  RegularUserCRUD _regularUserCRUD;
 
