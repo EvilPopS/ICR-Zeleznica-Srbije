@@ -12,9 +12,26 @@
         MaxHeight="440"
         MaxWidth="770"
         MinHeight="430"
-        MinWidth="560"
+        MinWidth="660"
 >
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="12*" />
+        </Grid.RowDefinitions>
+
+        <Frame 
+            x:Name="NavBar"
+            Grid.Row="0"
+            BorderBrush="Black"
+            BorderThickness="0 0 0 1"
+            NavigationUIVisibility="Hidden"
+        />
+        <Frame 
+            x:Name="WinContent" 
+            Grid.Row="1"
+            NavigationUIVisibility="Hidden"
+        />
+
     </Grid>
 </Window>

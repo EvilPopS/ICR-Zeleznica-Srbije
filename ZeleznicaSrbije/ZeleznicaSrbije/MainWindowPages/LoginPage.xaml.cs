@@ -25,11 +25,11 @@ namespace ZeleznicaSrbije.MainWindowPages {
                 ShowErrorPopUp("Oba polja moraju biti popunjena!");
 
             if (_loginService.TryLoginAsManager(email, password)) {
-                new ManagerWindow().Show();
+                new ManagerWindow(email).Show();
                 _wind.Close();
             }
             else if (_loginService.TryLoginAsRegularUser(email, password)) {
-                new RegularUserWindow().Show();
+                new RegularUserWindow(email).Show();
                 _wind.Close();
             }
             else

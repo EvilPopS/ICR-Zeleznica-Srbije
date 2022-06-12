@@ -13,7 +13,7 @@
     MaxHeight="440"
     MaxWidth="770"
     MinHeight="430"
-    MinWidth="560"
+    MinWidth="660"
 >
     <Grid>
         <Grid.RowDefinitions>

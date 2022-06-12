@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ZeleznicaSrbije.API.Models {
-    internal class Ticket {
+    public class Ticket {
 		private int id;
 		private int userId;
         private int timetableId;

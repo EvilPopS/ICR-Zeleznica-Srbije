@@ -1,24 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using ZeleznicaSrbije.API.Models;
+using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.RegularUserPages;
 
 namespace ZeleznicaSrbije {
-    /// <summary>
-    /// Interaction logic for RegularUserWindow.xaml
-    /// </summary>
     public partial class RegularUserWindow : Window {
-        public RegularUserWindow() {
+        private readonly RegularUserMM _userMM;
+        private readonly RegularUserService _userService;
+        private readonly RegularUser _userData; 
+
+        public RegularUserWindow(string userEmail) {
+            _userService = new RegularUserService();
+            _userData = _userService.GetUserByEmail(userEmail);
             InitializeComponent();
+
+            _userMM = new RegularUserMM();
+            _userMM.NavBarClicked += LoadNewContentPage;
+
+            NavBar.Content = _userMM;
+            LoadNewContentPage("PROFILE");
+        }
+        
+        public void LoadNewContentPage(string pageName) {
+            switch (pageName) {
+                case "PROFILE":
+                    WinContent.Content = new UserProfilePage(_userData, this);
+                    break;
+            }
         }
     }
 }

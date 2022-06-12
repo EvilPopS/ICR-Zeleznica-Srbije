@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZeleznicaSrbije.API.CRUD;
+﻿using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
 
-namespace ZeleznicaSrbije.API.Services
-{
+namespace ZeleznicaSrbije.API.Services {
     public class ManagerService
     {
-        ManagerCRUD managerCRUD;
+        private readonly ManagerCRUD _managerCRUD;
 
         public ManagerService()
         {
-            managerCRUD = new ManagerCRUD();
+            _managerCRUD = new ManagerCRUD();
         }
 
         public Manager getManager(string email)
         {
-            return managerCRUD.GetByEmail(email);
+            return _managerCRUD.GetByEmail(email);
 
         }
 
