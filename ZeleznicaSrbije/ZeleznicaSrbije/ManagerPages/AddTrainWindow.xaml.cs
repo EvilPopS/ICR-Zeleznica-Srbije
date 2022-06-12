@@ -29,7 +29,12 @@ namespace ZeleznicaSrbije.ManagerPages
 
         private void addNewTrain_Click(object sender, RoutedEventArgs e)
         {
-            Train newTrain = new Train{ TrainNumber = newTrainNumber.Text, Capacity = Int32.Parse(newTrainNoCols.Text) * Int32.Parse(newTrainNoRows.Text), IsDeleted = false };
+            Train newTrain = new Train { TrainNumber = newTrainNumber.Text,
+                Capacity = Int32.Parse(newTrainNoCols.Text) * Int32.Parse(newTrainNoRows.Text),
+                IsDeleted = false,
+                NoCols = Int32.Parse(newTrainNoCols.Text),
+                NoRows = Int32.Parse(newTrainNoRows.Text),
+            };
             addTrainClicked?.Invoke(newTrain);
             this.Close();
         }

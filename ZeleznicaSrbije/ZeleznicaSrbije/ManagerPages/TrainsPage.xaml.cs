@@ -80,7 +80,37 @@ namespace ZeleznicaSrbije.ManagerPages
 
         private void TrainsData_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine("sadsada");
+            TrainsData.ItemsSource = TrainsCollection;
+        }
+
+        public void EditTrainButton_Click(object sender, RoutedEventArgs e)
+        {
+            Train selTrain = ((Train)TrainsData.SelectedItem);
+            EditTrainWindow editTrainWindow = new EditTrainWindow(selTrain);
+            editTrainWindow.saveButtonClicked += editTrain;
+            editTrainWindow.ShowDialog();
+        }
+
+        private void updateTrainsCollection(Train succEditedTrain)
+        {
+            for (int i = 0; i < TrainsCollection.Count; i++)
+            {
+                if(succEditedTrain.Id == TrainsCollection[i].Id) {
+                    TrainsCollection[i] = succEditedTrain;
+
+                    break;
+                }
+            }   
+        }
+
+        public void editTrain(Train editedTrain)
+        {
+            Train successfullyEditedtrain = _trainsService.updateTrain(editedTrain);
+            updateTrainsCollection(successfullyEditedtrain);
+            
+            OkPopUp okPopUp = new OkPopUp("Uspešno ste imzenili voz.");
+            okPopUp.ShowDialog();
+
         }
     }
 }

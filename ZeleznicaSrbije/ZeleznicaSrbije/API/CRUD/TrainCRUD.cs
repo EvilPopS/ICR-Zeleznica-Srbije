@@ -41,5 +41,26 @@ namespace ZeleznicaSrbije.API.CRUD {
             _trains.AddEntity(train);
             FileReaderWriter.UpdateFile(FILE_PATH, _trains);
         }
+
+        public Train updateTrain(Train editedTrain)
+        {
+            foreach(var train in _trains.Entities)
+            {
+                if (train.Id == editedTrain.Id)
+                {
+                    train.Id = editedTrain.Id;
+                    train.NoRows = editedTrain.NoRows;
+                    train.NoCols = editedTrain.NoCols;
+                    train.IsDeleted = editedTrain.IsDeleted;
+                    train.Capacity = editedTrain.Capacity;
+                    train.TrainNumber = editedTrain.TrainNumber;
+                    FileReaderWriter.UpdateFile(FILE_PATH, _trains);
+                    return train;
+                }
+
+            }
+            return null;
+            
+        }
     }
 }

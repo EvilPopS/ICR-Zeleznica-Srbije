@@ -100,6 +100,9 @@
     <Compile Include="ManagerPages\ConfirmTrainDeletePopUp.xaml.cs">
       <DependentUpon>ConfirmTrainDeletePopUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPages\EditTrainWindow.xaml.cs">
+      <DependentUpon>EditTrainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\ManagerMM.xaml.cs">
       <DependentUpon>ManagerMM.xaml</DependentUpon>
     </Compile>
@@ -146,13 +149,13 @@
     <Compile Include="API\CRUD\TicketCRUD.cs" />
     <Compile Include="API\CRUD\TimetableCRUD.cs" />
     <Compile Include="API\CRUD\TrainCRUD.cs" />
-    <Compile Include="API\CRUD\TrainServiceCRUD.cs" />
+    <Compile Include="API\CRUD\TrainLineCRUD.cs" />
     <Compile Include="API\Models\Manager.cs" />
     <Compile Include="API\Models\RegularUser .cs" />
     <Compile Include="API\Models\Ticket .cs" />
     <Compile Include="API\Models\Timetable .cs" />
     <Compile Include="API\Models\Train .cs" />
-    <Compile Include="API\Models\TrainService .cs" />
+    <Compile Include="API\Models\TrainLine.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -170,6 +173,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerPages\EditTrainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\ManagerMM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,7 +233,7 @@
     <None Include="Database\DataFiles\tickets.json" />
     <None Include="Database\DataFiles\timetables.json" />
     <None Include="Database\DataFiles\trains.json" />
-    <None Include="Database\DataFiles\train_services.json" />
+    <None Include="Database\DataFiles\train_lines.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

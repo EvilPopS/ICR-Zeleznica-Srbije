@@ -26,5 +26,10 @@ namespace ZeleznicaSrbije.API.Services {
         {
             _trainCRUD.addNewTrain(train);
         }
+
+        public Train updateTrain(Train train)
+        {
+            return _trainCRUD.updateTrain(train);
+        }
     }
 }

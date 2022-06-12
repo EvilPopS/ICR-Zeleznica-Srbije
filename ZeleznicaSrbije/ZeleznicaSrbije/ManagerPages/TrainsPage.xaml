@@ -48,7 +48,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}">
+                                <Button Style="{StaticResource gridEditButton}" Click="EditTrainButton_Click">
                                     <Icon:PackIconMaterial Kind="PencilOutline"  Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
                                 <Button x:Name="deleteTrainButton" Click="DeleteTrainBtn_Click" Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}">
