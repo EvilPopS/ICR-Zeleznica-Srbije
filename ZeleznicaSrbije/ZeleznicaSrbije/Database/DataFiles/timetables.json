@@ -1,13 +1,38 @@
 {
-  "NextInd": 1,
+  "NextInd": 4,
   "Entities": [
     {
       "Id": 0,
       "TrainServiceId": 0,
-      "TrainId": 0,
-      "Start": "02:59:04.2940554",
-      "End": "02:59:04.3000395",
+      "TrainId": 2,
+      "Start": "05:45",
+      "End": "06:40",
+      "IsDeleted": false
+    },
+    {
+      "Id": 1,
+      "TrainServiceId": 0,
+      "TrainId": 3,
+      "Start": "10:30",
+      "End": "11:27",
+      "IsDeleted": false
+    },
+    {
+      "Id": 2,
+      "TrainServiceId": 0,
+      "TrainId": 4,
+      "Start": "14:30",
+      "End": "15:27",
+      "IsDeleted": false
+    },
+    {
+      "Id": 3,
+      "TrainServiceId": 0,
+      "TrainId": 5,
+      "Start": "20:45",
+      "End": "21:42",
       "IsDeleted": false
     }
+
   ]
 }

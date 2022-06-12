@@ -13,6 +13,7 @@ namespace ZeleznicaSrbije.API.CRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "trains.json";
         private readonly Repository<Train> _trains;
 
+
         public TrainCRUD() {
             _trains = FileReaderWriter.ReadFile<Train>(FILE_PATH);
         }
@@ -32,6 +33,34 @@ namespace ZeleznicaSrbije.API.CRUD {
                 }
             } 
             return false;
+        }
+
+        public void addNewTrain(Train train)
+        {
+            train.Id = _trains.NextInd;
+            _trains.AddEntity(train);
+            FileReaderWriter.UpdateFile(FILE_PATH, _trains);
+        }
+
+        public Train updateTrain(Train editedTrain)
+        {
+            foreach(var train in _trains.Entities)
+            {
+                if (train.Id == editedTrain.Id)
+                {
+                    train.Id = editedTrain.Id;
+                    train.NoRows = editedTrain.NoRows;
+                    train.NoCols = editedTrain.NoCols;
+                    train.IsDeleted = editedTrain.IsDeleted;
+                    train.Capacity = editedTrain.Capacity;
+                    train.TrainNumber = editedTrain.TrainNumber;
+                    FileReaderWriter.UpdateFile(FILE_PATH, _trains);
+                    return train;
+                }
+
+            }
+            return null;
+            
         }
     }
 }

@@ -18,14 +18,14 @@
         <StackPanel Orientation="Horizontal">
             <Label Content="Broj voza" Margin="45 40 0 50" FontSize="14"/>
             <Label Content="Kapacitet" Margin="65 40 0 0" FontSize="14"/>
-            <Button Style="{StaticResource addButton}" Margin="330 0 0 300">
+            <Button Style="{StaticResource addButton}" Margin="330 0 0 300" Click="addNewtrainButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
                     <TextBlock Text="Dodaj novi voz"/>
                 </StackPanel>
             </Button>
         </StackPanel>
-        <DataGrid Margin="0 60 0 0" x:Name="TrainsData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}">
+        <DataGrid Margin="0 60 0 0" x:Name="TrainsData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}" SelectionChanged="TrainsData_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
                 <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="*">
@@ -48,7 +48,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}">
+                                <Button Style="{StaticResource gridEditButton}" Click="EditTrainButton_Click">
                                     <Icon:PackIconMaterial Kind="PencilOutline"  Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
                                 <Button x:Name="deleteTrainButton" Click="DeleteTrainBtn_Click" Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}">

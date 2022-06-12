@@ -1,0 +1,26 @@
+{
+  "NextInd": 1,
+  "Entities": [
+    {
+      "Id": 0,
+      "PlaceStart": "Novi Sad",
+      "PlaceEnd": "Beograd",
+      "TimetableIds": [
+        0
+      ],
+      "MidlePlaces": [
+        "Petrovaradin",
+        "Sremski Karlovci",
+        "Beška",
+        "In?ija",
+        "Stara Pazova",
+        "Nova Pazova",
+        "Batajnica",
+        "Zemun Polje",
+        "Zemun",
+        "Novi Beograd
+      ],
+      "IsDeleted": false
+    }
+  ]
+}
