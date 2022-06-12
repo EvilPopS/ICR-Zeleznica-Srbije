@@ -65,7 +65,7 @@
                     Template="{StaticResource NavBarRadioBtnTemplate}" 
         >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/tickets-icon.jpg" Width="40" Height="32" />
+                <Image Source="../Assets/Images/tickets-icon.jpg" Width="40" Height="28" />
                 <TextBlock Height="19">KARTE</TextBlock>
             </StackPanel>
         </RadioButton>

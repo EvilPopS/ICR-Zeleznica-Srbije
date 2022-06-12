@@ -93,6 +93,7 @@
     <Compile Include="API\Models\Seat.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
+    <Compile Include="API\Services\RegularUserService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
     <Compile Include="ManagerPages\ConfirmTrainDeletePopUp.xaml.cs">
       <DependentUpon>ConfirmTrainDeletePopUp.xaml</DependentUpon>
@@ -191,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegularUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\DisabledTextBoxResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

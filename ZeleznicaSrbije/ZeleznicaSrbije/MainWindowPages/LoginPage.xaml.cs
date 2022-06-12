@@ -29,7 +29,7 @@ namespace ZeleznicaSrbije.MainWindowPages {
                 _wind.Close();
             }
             else if (_loginService.TryLoginAsRegularUser(email, password)) {
-                new RegularUserWindow().Show();
+                new RegularUserWindow(email).Show();
                 _wind.Close();
             }
             else
