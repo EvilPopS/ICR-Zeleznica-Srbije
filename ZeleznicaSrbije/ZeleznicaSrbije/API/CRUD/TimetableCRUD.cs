@@ -1,4 +1,5 @@
-﻿using ZeleznicaSrbije.API.Models;
+﻿using System.Collections.Generic;
+using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
 
@@ -10,5 +11,12 @@ namespace ZeleznicaSrbije.API.CRUD {
         public TimetableCRUD() {
             _timetables = FileReaderWriter.ReadFile<Timetable>(FILE_PATH);
         }
+
+        public List<Timetable> GetTimetable() {
+            return _timetables.Entities;        
+        }
+
+
+
     }
 }

@@ -90,10 +90,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
     <Compile Include="API\Services\RegularUserService.cs" />
+    <Compile Include="API\Services\TimetableService.cs" />
+    <Compile Include="API\Services\TrainLineService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
     <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
       <DependentUpon>AddTrainWindow.xaml</DependentUpon>
@@ -112,6 +115,9 @@
     </Compile>
     <Compile Include="ManagerPages\OkPopUp.xaml.cs">
       <DependentUpon>OkPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPages\TimeTablePage.xaml.cs">
+      <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\TrainsPage.xaml.cs">
       <DependentUpon>TrainsPage.xaml</DependentUpon>
@@ -193,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerPages\OkPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\TimeTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,26 +1,47 @@
 {
-  "NextInd": 1,
+  "NextInd": 2,
   "Entities": [
     {
       "Id": 0,
       "PlaceStart": "Novi Sad",
       "PlaceEnd": "Beograd",
       "TimetableIds": [
-        0
+        0,1,2,3
       ],
       "MidlePlaces": [
         "Petrovaradin",
         "Sremski Karlovci",
         "Beška",
-        "In?ija",
+        "Indjija",
         "Stara Pazova",
         "Nova Pazova",
         "Batajnica",
         "Zemun Polje",
         "Zemun",
-        "Novi Beograd
+        "Novi Beograd"
+      ],
+      "IsDeleted": false
+    },
+    {
+      "Id": 1,
+      "PlaceStart": "Ruma",
+      "PlaceEnd": "Beograd",
+      "TimetableIds": [
+        4,5
+      ],
+      "MidlePlaces": [
+        "Kraljevci",
+        "Putinci",
+        "Golubinci",
+        "Stara Pazova",
+        "Nova Pazova",
+        "Batajnica",
+        "Zemun Polje",
+        "Zemun",
+        "Novi Beograd"
       ],
       "IsDeleted": false
     }
+
   ]
 }

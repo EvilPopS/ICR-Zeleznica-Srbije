@@ -32,7 +32,24 @@
       "Start": "20:45",
       "End": "21:42",
       "IsDeleted": false
+    },
+    {
+      "Id": 4,
+      "TrainServiceId": 1,
+      "TrainId": 6,
+      "Start": "09:32",
+      "End": "11:12",
+      "IsDeleted": false
+    },
+    {
+      "Id": 5,
+      "TrainServiceId": 1,
+      "TrainId": 8,
+      "Start": "20:45",
+      "End": "22:22",
+      "IsDeleted": false
     }
+
 
   ]
 }
