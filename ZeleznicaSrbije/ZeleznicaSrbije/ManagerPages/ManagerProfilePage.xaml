@@ -5,33 +5,73 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ZeleznicaSrbije"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="407" d:DesignWidth="800"
       Title="ManagerProfilePage">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Theme/DisabledTextBoxResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label x:Name="Name" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalContentAlignment="Center" FontSize="36"/>
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"  FontSize="20" Content="Email: "/>
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"  FontSize="20" Content="Password: "/>
-        <Label x:Name="Email" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"   FontSize="20"/>
-        <Label x:Name="Password" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"   FontSize="20"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" FontSize="25" FontWeight="Bold" Content="DOBRODOŠLI!" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Top" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
 
 
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Label FontSize="15" FontWeight="Bold" Content="IME  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+            <Image Source="../Assets/Images/sur-name-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <TextBox x:Name="NameInpField" Grid.Column="1" Grid.Row="3" BorderBrush="Black"  
+                 HorizontalAlignment="Stretch" VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource TextBoxBlackDisabled}"/>
 
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Label FontSize="15" FontWeight="Bold" Content="PREZIME  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+            <Image Source="../Assets/Images/sur-name-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <TextBox x:Name="SurnameInpField" Grid.Column="1" Grid.Row="5" BorderBrush="Black" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource TextBoxBlackDisabled}"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Label FontSize="15" FontWeight="Bold" Content="E-MAIL  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+            <Image Source="../Assets/Images/email-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <TextBox x:Name="EmailInpField" Grid.Column="1" Grid.Row="7" BorderBrush="Black" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource TextBoxBlackDisabled}"/>
+
+        <Button Grid.Column="1" Grid.Row="8" FontSize="15" FontWeight="Black" Width="140" 
+                Content="IZLOGUJTE SE" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                Background="#FF919291" Click="LogoutBtn_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Page>

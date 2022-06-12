@@ -13,7 +13,7 @@ namespace ZeleznicaSrbije.MainWindowPages {
             InitializeComponent();
             _wind = wind;
             _loginService = loginService;
-            emailInpField.Text = "user1@gmail.com";
+            emailInpField.Text = "abc@gmail.com";
             passwordInpField.Password = "sifra123";
         }
 
@@ -25,7 +25,7 @@ namespace ZeleznicaSrbije.MainWindowPages {
                 ShowErrorPopUp("Oba polja moraju biti popunjena!");
 
             if (_loginService.TryLoginAsManager(email, password)) {
-                new ManagerWindow().Show();
+                new ManagerWindow(email).Show();
                 _wind.Close();
             }
             else if (_loginService.TryLoginAsRegularUser(email, password)) {

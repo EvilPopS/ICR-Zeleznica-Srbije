@@ -1,14 +1,15 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.RegularUserPages {
     public partial class UserProfilePage : Page {
         private readonly RegularUser _userData;
-        private readonly RegularUserWindow _parenWin;
+        private readonly RegularUserWindow _parentWin;
 
-        public UserProfilePage(RegularUser userData, RegularUserWindow parenWin) {
+        public UserProfilePage(RegularUser userData, RegularUserWindow parentWin) {
             _userData = userData;
-            _parenWin = parenWin;
+            _parentWin = parentWin;
 
             InitializeComponent();
             SetUpProfilePageData();
@@ -20,11 +21,10 @@ namespace ZeleznicaSrbije.RegularUserPages {
             EmailInpField.Text = _userData.Email;
         }
 
-        private void LogoutBtn_Click(object sender, System.Windows.RoutedEventArgs e) {
+        private void LogoutBtn_Click(object sender, RoutedEventArgs e) {
             MainWindow mainWin = new MainWindow();
             mainWin.Show();
-            _parenWin.Close();
-
+            _parentWin.Close();
         }
     }
 }

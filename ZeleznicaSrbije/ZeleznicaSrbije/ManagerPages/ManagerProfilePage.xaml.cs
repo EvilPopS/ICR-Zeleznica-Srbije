@@ -1,21 +1,31 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using ZeleznicaSrbije.API.Models;
-using ZeleznicaSrbije.API.Services;
 
 namespace ZeleznicaSrbije.ManagerPages {
-    public partial class ManagerProfilePage : Page
-    {
-        ManagerService _managerService;
-        
-        public ManagerProfilePage(ManagerService managerService)
-        {
-            _managerService = managerService;
+    public partial class ManagerProfilePage : Page {
+        private readonly Manager _managerData;
+        private readonly ManagerWindow _parentWin;
+
+        public ManagerProfilePage(Manager managerData, ManagerWindow parentWin) {
+            _managerData = managerData;
+            _parentWin = parentWin;
+
             InitializeComponent();
- 
-            Manager manager = _managerService.getManager("abc@gmail.com");
-            Name.Content = manager.Name + " " + manager.Surname;
-            Email.Content = manager.Email;
-            Password.Content = manager.Password;
+            SetUpProfilePageData();
+        }
+
+        private void SetUpProfilePageData() {
+            NameInpField.Text = _managerData.Name;
+            SurnameInpField.Text = _managerData.Surname;
+            EmailInpField.Text = _managerData.Email;
+        }
+
+        private void LogoutBtn_Click(object sender, RoutedEventArgs e) {
+            MainWindow mainWin = new MainWindow();
+            mainWin.Show();
+            _parentWin.Close();
+
         }
     }
 }

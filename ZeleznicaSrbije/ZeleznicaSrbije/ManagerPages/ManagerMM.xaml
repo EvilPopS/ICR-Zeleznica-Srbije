@@ -5,227 +5,74 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ZeleznicaSrbije"
       mc:Ignorable="d" 
-      d:DesignHeight="33" d:DesignWidth="800"
+      d:DesignHeight="33" d:DesignWidth="770"
       Title="ManagerMM">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Theme/NavBarResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.9*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.9*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <RadioButton x:Name="Profile"
-                    Grid.Column="0"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    Foreground="Black"
-                    FontWeight="Bold"
-                    FontSize="16"
-                    IsChecked="True" Checked="Profile_Checked" 
-
-            >
+        <RadioButton x:Name="Profile" Grid.Column="0" IsChecked="True" Checked="Profile_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/login-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/profile-icon.jpg" Width="38" Height="26" />
                 <TextBlock Height="19">PROFIL</TextBlock>
             </StackPanel>
-
-            <RadioButton.Style>
-                <Style TargetType="RadioButton">
-                    <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#919291"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </RadioButton.Style>
-            <RadioButton.Template>
-                <ControlTemplate TargetType="RadioButton">
-                    <Border HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch"
-                                CornerRadius="20 20 0 0"
-                                Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-
-                </ControlTemplate>
-            </RadioButton.Template>
         </RadioButton>
-        <RadioButton
-                    x:Name="TrainSchedule"
-                    Grid.Column="1"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    Foreground="Black"
-                    FontWeight="Bold"
-                    FontSize="16" Checked="TrainSchedule_Checked" 
+        
+        <RadioButton x:Name="TrainSchedule" Grid.Column="1" Checked="TrainSchedule_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
             >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/timetable-icon.png" Width="38" Height="26" />
                 <TextBlock Height="19">RED VOŽNJE</TextBlock>
             </StackPanel>
-
-            <RadioButton.Style>
-                <Style TargetType="RadioButton">
-                    <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background"  Value="White"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#919291"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </RadioButton.Style>
-            <RadioButton.Template>
-                <ControlTemplate TargetType="RadioButton">
-                    <Border HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch"
-                                CornerRadius="20 20 0 0"
-                                Background="{TemplateBinding Background}"
-                    >
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-
-                </ControlTemplate>
-            </RadioButton.Template>
         </RadioButton>
-        <RadioButton
-                    x:Name="Trains"
-                    Grid.Column="2"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    Foreground="Black"
-                    FontWeight="Bold"
-                    FontSize="16" Checked="Trains_Checked" 
+        
+        <RadioButton x:Name="Trains" Grid.Column="2" Checked="Trains_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
             >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/trains-icon.jpg" Width="38" Height="26" />
                 <TextBlock Height="19">VOZOVI</TextBlock>
             </StackPanel>
-
-            <RadioButton.Style>
-                <Style TargetType="RadioButton">
-                    <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background"  Value="White"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#919291"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </RadioButton.Style>
-            <RadioButton.Template>
-                <ControlTemplate TargetType="RadioButton">
-                    <Border HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch"
-                                CornerRadius="20 20 0 0"
-                                Background="{TemplateBinding Background}"
-                    >
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-
-                </ControlTemplate>
-            </RadioButton.Template>
         </RadioButton>
-        <RadioButton 
-                    x:Name="TrainLines"
-                    Grid.Column="3"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    Foreground="Black"
-                    FontWeight="Bold"
-                    FontSize="16" Checked="TrainLines_Checked" 
-            >
+        
+        <RadioButton x:Name="TrainLines" Grid.Column="3" Checked="TrainLines_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/lines-icon.jpg" Width="38" Height="26" />
                 <TextBlock Height="19">VOZNE LINIJE</TextBlock>
             </StackPanel>
-
-            <RadioButton.Style>
-                <Style TargetType="RadioButton">
-                    <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background"  Value="White"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#919291"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </RadioButton.Style>
-            <RadioButton.Template>
-                <ControlTemplate TargetType="RadioButton">
-                    <Border HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch"
-                                CornerRadius="20 20 0 0"
-                                Background="{TemplateBinding Background}"
-                    >
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-
-                </ControlTemplate>
-            </RadioButton.Template>
         </RadioButton>
-        <RadioButton 
-                    x:Name="Reports"
-                    Grid.Column="4"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    Foreground="Black"
-                    FontWeight="Bold"
-                    FontSize="18" Checked="Reports_Checked" 
-            >
+        
+        <RadioButton x:Name="Reports" Grid.Column="4" Checked="Reports_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
             <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
-                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <Image Source="../Assets/Images/reports-icon.png" Width="38" Height="26" />
                 <TextBlock Height="19">IZVEŠTAJI</TextBlock>
             </StackPanel>
-
-            <RadioButton.Style>
-                <Style TargetType="RadioButton">
-                    <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                    <Setter Property="Background"  Value="White"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#919291"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </RadioButton.Style>
-            <RadioButton.Template>
-                <ControlTemplate TargetType="RadioButton">
-                    <Border HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch"
-                                CornerRadius="20 20 0 0"
-                                Background="{TemplateBinding Background}"
-                    >
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-
-                </ControlTemplate>
-            </RadioButton.Template>
         </RadioButton>
 
     </Grid>
