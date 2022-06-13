@@ -15,11 +15,13 @@ namespace ZeleznicaSrbije.API.DTOs
         private string startTime;
         private string endTime;
         private string midleStations;
+        private int timetableId;
 
 
 
         
-        
+        public int TimetableId { get { return timetableId; } set { timetableId = value; } }
+
         public string From { get { return from; } set { from = value; } }
 
         public string To { get { return to; } set { to = value; } }

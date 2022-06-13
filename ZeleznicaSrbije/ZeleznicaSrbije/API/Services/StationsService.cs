@@ -37,7 +37,11 @@ namespace ZeleznicaSrbije.API.Services
         {
             List<string> completePath = new List<string>();
             completePath.Add(startPoint);
-            foreach(string ms in midleStations) { completePath.Add(ms); };
+            if (!midleStations[0].Equals("Bez medjustanica"))
+            {
+                foreach (string ms in midleStations) { completePath.Add(ms); };
+            }
+            
             completePath.Add(endPoint);
             
             int minutes = 0;

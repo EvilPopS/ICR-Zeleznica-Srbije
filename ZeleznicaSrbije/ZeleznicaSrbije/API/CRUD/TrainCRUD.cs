@@ -77,5 +77,17 @@ namespace ZeleznicaSrbije.API.CRUD {
             return null;
             
         }
+
+        public Train getTrainByNumber(string trainNumber)
+        {
+            foreach(Train train in _trains.Entities)
+            {
+                if (train.TrainNumber == trainNumber)
+                {
+                    return train;
+                }
+            }
+            return null;
+        }
     }
 }
