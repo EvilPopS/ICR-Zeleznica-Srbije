@@ -37,6 +37,19 @@ namespace ZeleznicaSrbije.API.CRUD {
             return false;
         }
 
+        internal Train getTrainById(int id)
+        {
+            foreach(var train in _trains.Entities)
+            {
+                if(train.Id == id)
+                {
+                    return train;
+                }
+            }
+
+            return null;
+        }
+
         public void addNewTrain(Train train)
         {
             train.Id = _trains.NextInd;

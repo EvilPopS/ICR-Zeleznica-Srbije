@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ZeleznicaSrbije.API.Models {
-    internal class TrainLine {
+    public class TrainLine {
         private int id;
         private string placeStart;
         private string placeEnd;

@@ -9,7 +9,7 @@ namespace ZeleznicaSrbije.API.Models {
         private TimeSpan end;
         private bool isDeleted;
 
-
+        public Timetable() { }
         public int Id { get => id; set => id = value; }
         public int TrainServiceId { get => trainServiceId; set => trainServiceId = value; }
         public int TrainId { get => trainId; set => trainId = value; }

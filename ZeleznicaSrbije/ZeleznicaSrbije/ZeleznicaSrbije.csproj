@@ -91,18 +91,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="API\DTOs\ShowTicketDTO.cs" />
+    <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
+    <Compile Include="API\DTOs\RelationDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
+    <Compile Include="API\Models\Station.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
     <Compile Include="API\Services\RegularUserService.cs" />
     <Compile Include="API\Services\TicketsService.cs" />
+    <Compile Include="API\Services\StationsService.cs" />
     <Compile Include="API\Services\TimetableService.cs" />
+    <Compile Include="API\Services\TrainLineService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
+    <Compile Include="ManagerPages\AddNewRide.xaml.cs">
+      <DependentUpon>AddNewRide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
       <DependentUpon>AddTrainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\ConfirmTrainDeletePopUp.xaml.cs">
       <DependentUpon>ConfirmTrainDeletePopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPages\EditRideWindow.xaml.cs">
+      <DependentUpon>EditRideWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\EditTrainWindow.xaml.cs">
       <DependentUpon>EditTrainWindow.xaml</DependentUpon>
@@ -115,6 +126,9 @@
     </Compile>
     <Compile Include="ManagerPages\OkPopUp.xaml.cs">
       <DependentUpon>OkPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPages\TimeTablePage.xaml.cs">
+      <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\TrainsPage.xaml.cs">
       <DependentUpon>TrainsPage.xaml</DependentUpon>
@@ -140,6 +154,10 @@
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ManagerPages\AddNewRide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\AddTrainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +207,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerPages\EditRideWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\EditTrainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerPages\OkPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\TimeTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -270,6 +296,7 @@
     </EmbeddedResource>
     <None Include="Database\DataFiles\managers.json" />
     <None Include="Database\DataFiles\regular_users.json" />
+    <None Include="Database\DataFiles\stations.json" />
     <None Include="Database\DataFiles\tickets.json" />
     <None Include="Database\DataFiles\timetables.json" />
     <None Include="Database\DataFiles\trains.json" />

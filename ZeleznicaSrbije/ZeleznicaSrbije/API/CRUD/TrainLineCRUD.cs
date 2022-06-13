@@ -10,10 +10,40 @@ using ZeleznicaSrbije.Database.Repositories;
 namespace ZeleznicaSrbije.API.CRUD {
     public class TrainLineCRUD {
         private readonly string FILE_PATH = AppSettings.databasePath + "train_lines.json";
-        private readonly Repository<TrainLine> trainLines;
+        private readonly Repository<TrainLine> _trainLines;
 
         public TrainLineCRUD() {
-            trainLines = FileReaderWriter.ReadFile<TrainLine>(FILE_PATH);
+            _trainLines = FileReaderWriter.ReadFile<TrainLine>(FILE_PATH);
+        }
+
+        public List<TrainLine> GetTrainLines()
+        {
+            return _trainLines.Entities;
+        }
+
+        public TrainLine getTrainLineById(int id)
+        {
+            foreach (var line in _trainLines.Entities)
+            {
+                if (line.Id == id)
+                {
+                    return line;
+                }
+            }
+            return null;
+        }
+
+        public TrainLine getTrainLineByMidleStations(List<string> midleStations)
+        {
+            foreach(var line in _trainLines.Entities)
+            {
+                if (line.MidlePlaces.All(midleStations.Contains))
+                {
+                    return line;
+                }
+            }
+
+            return null;
         }
     }
 }

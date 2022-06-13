@@ -1,4 +1,5 @@
-﻿using ZeleznicaSrbije.API.Models;
+﻿using System.Collections.Generic;
+using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
 
@@ -16,6 +17,16 @@ namespace ZeleznicaSrbije.API.CRUD {
                 if (tt.Id == timetableId)
                     return tt;
             return null;
+          }
+
+        public List<Timetable> GetTimetable() {
+            return _timetables.Entities;        
+        }
+
+        public void addNewRide(Timetable newRide)
+        {
+            _timetables.Entities.Add(newRide);
+            FileReaderWriter.UpdateFile(FILE_PATH, _timetables);
         }
     }
 }
