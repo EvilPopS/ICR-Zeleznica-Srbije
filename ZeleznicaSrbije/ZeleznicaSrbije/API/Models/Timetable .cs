@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ZeleznicaSrbije.API.Models {
-    internal class Timetable {
+    public class Timetable {
         private int id;
         private int trainServiceId;
         private int trainId;
@@ -13,7 +13,7 @@ namespace ZeleznicaSrbije.API.Models {
         private TimeSpan end;
         private bool isDeleted;
 
-
+        public Timetable() { }
         public int Id { get => id; set => id = value; }
         public int TrainServiceId { get => trainServiceId; set => trainServiceId = value; }
         public int TrainId { get => trainId; set => trainId = value; }

@@ -370,7 +370,7 @@
             <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
             <Setter Property="AutoGenerateColumns" Value="False" />
             <Setter Property="HeadersVisibility" Value="Column" />
-            <Setter Property="Margin" Value="0 10 0 0" />
+            <Setter Property="Margin" Value="0 0 0 0" />
             <Setter Property="Grid.Row" Value="5" />
             <Setter Property="SelectionMode" Value="Single" />
             <Setter Property="SelectionUnit" Value="FullRow" />
