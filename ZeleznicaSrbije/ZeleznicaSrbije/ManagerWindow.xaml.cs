@@ -34,6 +34,9 @@ namespace ZeleznicaSrbije {
                 case "TRAIN_SCHEDULE_PAGE":
                     WinContent.Content = new TimetablePage();
                     break;
+                case "TRAIN_LINES_PAGE":
+                    WinContent.Content = new TrainLinesPage();
+                    break;
             }
         }
     }

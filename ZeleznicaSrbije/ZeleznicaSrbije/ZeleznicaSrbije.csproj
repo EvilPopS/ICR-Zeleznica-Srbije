@@ -90,6 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\DTOs\ManagerTrainLineDTO.cs" />
     <Compile Include="API\DTOs\ShowTicketDTO.cs" />
     <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
     <Compile Include="API\DTOs\RelationDTO.cs" />
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="ManagerPages\TimeTablePage.xaml.cs">
       <DependentUpon>TimeTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPages\TrainLinesPage.xaml.cs">
+      <DependentUpon>TrainLinesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\TrainsPage.xaml.cs">
       <DependentUpon>TrainsPage.xaml</DependentUpon>
@@ -228,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerPages\TimeTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\TrainLinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -379,6 +387,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\datetime-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\train-lines-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
