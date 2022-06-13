@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZeleznicaSrbije.API.CRUD;
 using ZeleznicaSrbije.API.Models;
 
@@ -10,21 +6,25 @@ namespace ZeleznicaSrbije.API.Services
 {
     internal class TimetableService
     {
-        private readonly TimetableCRUD timetableCRUD;
+        private readonly TimetableCRUD _timetableCRUD;
 
         public TimetableService()
         {
-            timetableCRUD = new TimetableCRUD();
+            _timetableCRUD = new TimetableCRUD();
         }
 
         public List<Timetable> getTimetable()
         {
-            return timetableCRUD.GetTimetable();
+            return _timetableCRUD.GetTimetable();
+        }
+
+        public Timetable GetTimetableById(int timetableId) {
+            return _timetableCRUD.GetById(timetableId);
         }
 
         public void addNewRideToTimetable(Timetable newRide)
         {
-            timetableCRUD.addNewRide(newRide);
+            _timetableCRUD.addNewRide(newRide);
         }
     }
 }

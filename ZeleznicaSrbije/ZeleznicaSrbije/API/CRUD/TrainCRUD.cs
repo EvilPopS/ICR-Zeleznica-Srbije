@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.Database;
 using ZeleznicaSrbije.Database.Repositories;
@@ -20,6 +15,13 @@ namespace ZeleznicaSrbije.API.CRUD {
 
         public List<Train> GetAllTrains() {
             return _trains.Entities;
+        }
+
+        public Train GetById(int trainId) {
+            foreach (Train t in _trains.Entities)
+                if (t.Id == trainId)
+                    return t;
+            return null;
         }
 
         public bool DeleteTrain(string trainNumber) {

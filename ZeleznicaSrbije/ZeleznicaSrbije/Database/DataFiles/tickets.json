@@ -9,7 +9,173 @@
       "Price": 300.0,
       "IsReserved": false,
       "IsBought": true,
-      "IsActive": true
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": true,
+      "IsBought": false,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": true,
+      "IsBought": false,
+      "IsActive": true,
+      "SeatNumber": "12"
+    },
+    {
+      "Id": 0,
+      "UserId": 0,
+      "TimetableId": 0,
+      "ValidityDate": "2022-06-08T00:00:00+02:00",
+      "Price": 300.0,
+      "IsReserved": true,
+      "IsBought": false,
+      "IsActive": true,
+      "SeatNumber": "12"
     }
   ]
 }

@@ -10,7 +10,7 @@ namespace ZeleznicaSrbije.API.Models {
         private string placeStart;
         private string placeEnd;
         private List<int> timetableIds;
-        private List<string> midlePlaces;
+        private List<string> middlePlaces;
         private bool isDeleted;
 
 
@@ -19,7 +19,7 @@ namespace ZeleznicaSrbije.API.Models {
         public string PlaceEnd { get => placeEnd; set => placeEnd = value; }
         public List<int> TimetableIds { get => timetableIds; set => timetableIds = value; }
 
-        public List<string> MidlePlaces { get => midlePlaces; set => midlePlaces = value; }
+        public List<string> MiddlePlaces { get => middlePlaces; set => middlePlaces = value; }
         public bool IsDeleted { get => isDeleted; set => isDeleted = value; }
     }
 }

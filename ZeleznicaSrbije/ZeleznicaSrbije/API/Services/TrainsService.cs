@@ -32,11 +32,13 @@ namespace ZeleznicaSrbije.API.Services {
             return _trainCRUD.updateTrain(train);
         }
 
+        public Train GetByTrainId(int trainId) {
+            return _trainCRUD.GetById(trainId);
+        }
+
         public Train getTrainById(int id)
         {
             return _trainCRUD.getTrainById(id);
         }
-
-
     }
 }

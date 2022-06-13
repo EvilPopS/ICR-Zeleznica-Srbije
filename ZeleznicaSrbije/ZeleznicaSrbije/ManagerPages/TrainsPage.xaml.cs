@@ -1,29 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
 
-namespace ZeleznicaSrbije.ManagerPages
-{
+namespace ZeleznicaSrbije.ManagerPages {
     public partial class TrainsPage : Page
     {
         TrainsService _trainsService;
 
         ObservableCollection<Train> TrainsCollection { get; set; }
+
 
         public TrainsPage(TrainsService trainsService) {
             _trainsService = trainsService;
@@ -71,11 +58,6 @@ namespace ZeleznicaSrbije.ManagerPages
 
             OkPopUp okPopUp = new OkPopUp("Uspešno ste dodali novi voz.");
             okPopUp.ShowDialog();
-
-
-
-
-
         }
 
         private void TrainsData_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -97,7 +79,6 @@ namespace ZeleznicaSrbije.ManagerPages
             {
                 if(succEditedTrain.Id == TrainsCollection[i].Id) {
                     TrainsCollection[i] = succEditedTrain;
-
                     break;
                 }
             }   
