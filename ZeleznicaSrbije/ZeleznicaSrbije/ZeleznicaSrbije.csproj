@@ -93,6 +93,7 @@
     <Compile Include="API\DTOs\ShowTicketDTO.cs" />
     <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
     <Compile Include="API\DTOs\RelationDTO.cs" />
+    <Compile Include="API\DTOs\UserTimeTableShowDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
     <Compile Include="API\Models\Station.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />

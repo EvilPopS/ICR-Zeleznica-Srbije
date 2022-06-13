@@ -30,7 +30,8 @@
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
                 <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
             </StackPanel>
-            <ComboBox HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Top" Height="30">
+            <ComboBox x:Name="StartPlaceBox" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Top" Height="30" SelectedIndex="0">
+                <ComboBoxItem Content="Nije izabrano"></ComboBoxItem>
                 <ComboBoxItem Content="Beograd"></ComboBoxItem>
                 <ComboBoxItem Content="Indjija"></ComboBoxItem>
                 <ComboBoxItem Content="Novi Sad"></ComboBoxItem>
@@ -43,7 +44,8 @@
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
                 <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
             </StackPanel>
-            <ComboBox HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Top" Height="30">
+            <ComboBox x:Name="EndPlaceBox" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Top" Height="30" SelectedIndex="0">
+                <ComboBoxItem Content="Nije izabrano"></ComboBoxItem>
                 <ComboBoxItem Content="Beograd"></ComboBoxItem>
                 <ComboBoxItem Content="Indjija"></ComboBoxItem>
                 <ComboBoxItem Content="Novi Sad"></ComboBoxItem>
@@ -81,7 +83,7 @@
             <Label Content="Vreme dolaska" Grid.Column="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Content="Trajanje putovanja" Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
 
-            <DataGrid Grid.Row="1" Grid.ColumnSpan="4" x:Name="TicketsList" RowStyle="{DynamicResource DataGridRowStyle1}"
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="4" x:Name="TimeTablesList" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" 
                   Style="{DynamicResource DataGridStyle1}">
                 <DataGrid.Columns>
@@ -92,21 +94,21 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="TravelTime" Binding="{Binding TravelTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="TravelTime" Binding="{Binding TravelTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
