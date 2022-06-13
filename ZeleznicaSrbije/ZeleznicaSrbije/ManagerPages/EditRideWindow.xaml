@@ -1,11 +1,11 @@
-﻿<Window x:Class="ZeleznicaSrbije.ManagerPages.AddNewRide"
+﻿<Window x:Class="ZeleznicaSrbije.ManagerPages.EditRideWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZeleznicaSrbije.ManagerPages"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Dodavanje nove vožnje" 
+        Title="Izmena vožnje" 
         Icon="../Assets/Images/train-icon.jpg"
         Height="250" 
         Width="600"
@@ -26,7 +26,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="trainAddTextBlock" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  
-                    FontSize="19" TextAlignment="Center" VerticalAlignment="Center" Text="Dodavanje nove vožnje" 
+                    FontSize="19" TextAlignment="Center" VerticalAlignment="Center" Text="Izmena vožnje" 
                    />
 
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Relacija: "    FontSize="16"/>
@@ -34,12 +34,12 @@
         <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Broj voza: "  FontSize="16"/>
         <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin ="5 0 0 0" Text="Sati:"  FontSize="16"/>
         <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin ="35 0 0 0" Text="Minuti:"  FontSize="16"/>
-        
-        <ComboBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="Relations"   Width="180" Height="25" DisplayMemberPath="Relation" SelectionChanged="Relation_Picked" />
-        <ComboBox IsEnabled="False" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Midlestations"   Width="180" Height="25" SelectionChanged="Midlestations_Picked" />
-        <ComboBox IsEnabled="False" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="StartHours"   Margin="35 0 0 0" Width="50" Height="25" SelectionChanged="Hours_Picked"/>
-        <ComboBox IsEnabled="False" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="StartMinutes"   Margin="0 0 5 0" Width="50" Height="25" SelectionChanged="Minutes_Picked" />
-        <ComboBox IsEnabled="False" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="TrainNumber"   Width="180" Height="25" SelectionChanged="TrainNumber_Picked" DisplayMemberPath="TrainNumber "/>
+
+        <ComboBox  Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="Relations"   Width="180" Height="25" DisplayMemberPath="Relation" SelectionChanged="Relation_Picked" />
+        <ComboBox  Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Midlestations"   Width="180" Height="25"  />
+        <ComboBox  Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="StartHours"   Margin="35 0 0 0" Width="50" Height="25" />
+        <ComboBox  Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="StartMinutes"   Margin="0 0 5 0" Width="50" Height="25"/>
+        <ComboBox  Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="TrainNumber"   Width="180" Height="25" DisplayMemberPath="TrainNumber "/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Međustanice: "  FontSize="16"/>
         <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Vreme dolaska: "  FontSize="16"/>
@@ -47,11 +47,12 @@
 
 
 
-        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource addButton}" VerticalAlignment="Top" Click="addNewRide_Click" HorizontalAlignment="Center" Margin="0,10,0,0" Height="35" Width="132">
+        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource confirmEditButton}" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,10,0,0" Height="35" Width="132">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
-                <TextBlock Text="Dodaj vožnju"/>
+                <TextBlock Text="Sačuvaj izmene"/>
             </StackPanel>
-        </Button>   
+        </Button>
+
     </Grid>
 </Window>

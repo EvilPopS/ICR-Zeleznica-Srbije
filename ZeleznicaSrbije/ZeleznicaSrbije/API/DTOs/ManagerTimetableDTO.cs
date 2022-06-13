@@ -7,17 +7,19 @@ using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.API.DTOs
 {
-    internal class ManagerTimetableDTO
+    public class ManagerTimetableDTO
     {
         private string from;
         private string to;
         private string trainNumber;
         private string startTime;
         private string endTime;
+        private string midleStations;
+
 
 
         
-
+        
         public string From { get { return from; } set { from = value; } }
 
         public string To { get { return to; } set { to = value; } }
@@ -28,6 +30,7 @@ namespace ZeleznicaSrbije.API.DTOs
 
         public string EndTime { get { return endTime; } set { endTime = value; } }  
         
+        public string MidleStations { get { return midleStations; } set { midleStations = value; } }
 
     }
 }

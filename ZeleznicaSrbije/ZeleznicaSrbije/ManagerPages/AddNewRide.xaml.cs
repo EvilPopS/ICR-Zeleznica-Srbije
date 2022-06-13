@@ -66,16 +66,6 @@ namespace ZeleznicaSrbije.ManagerPages
             return hours;
         }
 
-        //private List<string> getTrainNumbers()
-        //{
-        //    List<string> trainNumbers = new List<string>();
-        //    foreach(var t in trains)
-        //    {
-        //        trainNumbers.Add(t.TrainNumber);
-        //    }
-
-        //    return trainNumbers;
-        //}
 
         private List<RelationDTO> getPossibleRelations()
         {
