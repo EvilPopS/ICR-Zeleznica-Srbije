@@ -14,22 +14,19 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid>
+        <Grid Margin="10 0 10 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-            
-            
+
+
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Label FontSize="15" FontWeight="Bold" Content="MESTO POLASKA  -" 
+                <Label FontSize="13" FontWeight="Bold" Content="MESTO POLASKA  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
                 <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
             </StackPanel>
@@ -42,7 +39,7 @@
             </ComboBox>
 
             <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Label FontSize="15" FontWeight="Bold" Content="MESTO DOLASKA  -" 
+                <Label FontSize="13" FontWeight="Bold" Content="MESTO DOLASKA  -" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
                 <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
             </StackPanel>
@@ -54,32 +51,8 @@
                 <ComboBoxItem Content="Zemun"></ComboBoxItem>
             </ComboBox>
 
-            <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Label FontSize="15" FontWeight="Bold" Content="VREME DOLASKA  -" 
-                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-                <Image Source="../Assets/Images/datetime-icon.jpg"  Width="30" Height="28" VerticalAlignment="Bottom"/>
-            </StackPanel>
-            <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Top" >
-                <Label FontSize="14" FontWeight="Bold" Content="Sati:" />
-                <ComboBox x:Name="StartTimeHours" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
-                <Label FontSize="14" FontWeight="Bold" Content="Minute:" />
-                <ComboBox x:Name="StartTimeMinutes" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
-            </StackPanel>
 
-
-            <StackPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Label FontSize="15" FontWeight="Bold" Content="VREME DOLASKA  -" 
-                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
-                <Image Source="../Assets/Images/datetime-icon.jpg"  Width="30" Height="28" VerticalAlignment="Bottom"/>
-            </StackPanel>
-            <StackPanel Grid.Row="7" Orientation="Horizontal" VerticalAlignment="Top" >
-                <Label FontSize="14" FontWeight="Bold" Content="Sati:" />
-                <ComboBox x:Name="EndTimeHours" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
-                <Label FontSize="14" FontWeight="Bold" Content="Minute:" />
-                <ComboBox x:Name="EndTimeMinutes" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
-            </StackPanel>
-            
-            <Button Grid.Column="1" Grid.Row="8" FontSize="15" FontWeight="Black" Width="140" 
+            <Button Grid.Row="4" FontSize="15" FontWeight="Black" Width="140" 
                 Content="PRETRAŽI" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
                 Background="#FF919291" Click="Search_Click">
                 <Button.Resources>
@@ -88,6 +61,62 @@
                     </Style>
                 </Button.Resources>
             </Button>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="0 10 10 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Oznaka voza" Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Vreme polaska" Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Vreme dolaska" Grid.Column="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Trajanje putovanja" Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="4" x:Name="TicketsList" RowStyle="{DynamicResource DataGridRowStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" 
+                  Style="{DynamicResource DataGridStyle1}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="TrainNumber" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="TravelTime" Binding="{Binding TravelTime}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+            
         </Grid>
     </Grid>
 </Page>
