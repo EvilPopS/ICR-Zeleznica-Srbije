@@ -103,7 +103,7 @@ namespace ZeleznicaSrbije.ManagerPages
                 StartTime = timetable.Start.ToString(@"hh\:mm"),
                 EndTime = timetable.End.ToString(@"hh\:mm"),
                 TrainNumber = _trainsService.getTrainById(timetable.TrainServiceId).TrainNumber,
-                MidleStations = (String.Join(",", _trainLineService.getTrainLineById(timetable.TrainServiceId).MidlePlaces))
+                MidleStations = (String.Join(",", _trainLineService.getTrainLineById(timetable.TrainServiceId).MiddlePlaces))
             };
             return timetableDTO;
         }

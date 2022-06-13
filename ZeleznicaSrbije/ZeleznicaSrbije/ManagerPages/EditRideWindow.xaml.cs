@@ -72,13 +72,13 @@ namespace ZeleznicaSrbije.ManagerPages
             {
                 if (tl.PlaceStart == rel.Relation.Split('-')[0].Trim() && tl.PlaceEnd == rel.Relation.Split('-')[1].Trim())
                 {
-                    if (tl.MidlePlaces.Count == 0)
+                    if (tl.MiddlePlaces.Count == 0)
                     {
                         midleStationsList.Add("Bez medjustanica");
                     }
                     else
                     {
-                        midleStationsList.Add(String.Join(",", tl.MidlePlaces));
+                        midleStationsList.Add(String.Join(",", tl.MiddlePlaces));
                     }
 
                 }

@@ -37,7 +37,7 @@ namespace ZeleznicaSrbije.API.CRUD {
         {
             foreach(var line in _trainLines.Entities)
             {
-                if (line.MidlePlaces.All(midleStations.Contains))
+                if (line.MiddlePlaces.All(midleStations.Contains))
                 {
                     return line;
                 }
