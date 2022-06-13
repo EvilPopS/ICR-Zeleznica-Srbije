@@ -20,12 +20,16 @@ namespace ZeleznicaSrbije {
         }
         
         public void LoadNewContentPage(string pageName) {
+            
             switch (pageName) {
                 case "PROFILE":
                     WinContent.Content = new UserProfilePage(_userData, this);
                     break;
                 case "TICKETS":
                     WinContent.Content = new TicketsPage(_userData.Id);
+                    break;
+                case "TRAIN_SCHEDULE":
+                    WinContent.Content = new TimetablePage();
                     break;
             }
         }

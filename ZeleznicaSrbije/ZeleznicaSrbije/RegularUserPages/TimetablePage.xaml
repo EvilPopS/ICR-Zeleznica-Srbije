@@ -1,0 +1,93 @@
+﻿<Page xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  x:Class="ZeleznicaSrbije.RegularUserPages.TimetablePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZeleznicaSrbije.RegularUserPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="407" d:DesignWidth="770"
+      Title="TimetablePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Label FontSize="15" FontWeight="Bold" Content="MESTO POLASKA  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+                <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <ComboBox HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Top" Height="30">
+                <ComboBoxItem Content="Beograd"></ComboBoxItem>
+                <ComboBoxItem Content="Indjija"></ComboBoxItem>
+                <ComboBoxItem Content="Novi Sad"></ComboBoxItem>
+                <ComboBoxItem Content="Petrovaradin"></ComboBoxItem>
+                <ComboBoxItem Content="Zemun"></ComboBoxItem>
+            </ComboBox>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Label FontSize="15" FontWeight="Bold" Content="MESTO DOLASKA  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+                <Image Source="../Assets/Images/place-icon.png"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <ComboBox HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Top" Height="30">
+                <ComboBoxItem Content="Beograd"></ComboBoxItem>
+                <ComboBoxItem Content="Indjija"></ComboBoxItem>
+                <ComboBoxItem Content="Novi Sad"></ComboBoxItem>
+                <ComboBoxItem Content="Petrovaradin"></ComboBoxItem>
+                <ComboBoxItem Content="Zemun"></ComboBoxItem>
+            </ComboBox>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Label FontSize="15" FontWeight="Bold" Content="VREME DOLASKA  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+                <Image Source="../Assets/Images/datetime-icon.jpg"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Top" >
+                <Label FontSize="14" FontWeight="Bold" Content="Sati:" />
+                <ComboBox x:Name="StartTimeHours" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
+                <Label FontSize="14" FontWeight="Bold" Content="Minute:" />
+                <ComboBox x:Name="StartTimeMinutes" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Label FontSize="15" FontWeight="Bold" Content="VREME DOLASKA  -" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+                <Image Source="../Assets/Images/datetime-icon.jpg"  Width="30" Height="28" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Orientation="Horizontal" VerticalAlignment="Top" >
+                <Label FontSize="14" FontWeight="Bold" Content="Sati:" />
+                <ComboBox x:Name="EndTimeHours" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
+                <Label FontSize="14" FontWeight="Bold" Content="Minute:" />
+                <ComboBox x:Name="EndTimeMinutes" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="45" Height="30"/>
+            </StackPanel>
+            
+            <Button Grid.Column="1" Grid.Row="8" FontSize="15" FontWeight="Black" Width="140" 
+                Content="PRETRAŽI" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                Background="#FF919291" Click="Search_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
