@@ -1,0 +1,64 @@
+﻿[
+  {
+    "PlaceOne": "Novi Sad",
+    "PlaceTwo": "Petrovaradin",
+    "TravelTime": 4
+
+  },
+  {
+    "PlaceOne": "Novi Sad",
+    "PlaceTwo": "Indjija",
+    "TravelTime": 20
+
+  },
+  {
+    "PlaceOne": "Novi Sad",
+    "PlaceTwo": "Zemun",
+    "TravelTime": 44
+
+  },
+  {
+    "PlaceOne": "Novi Sad",
+    "PlaceTwo": "Beograd",
+    "TravelTime": 55
+
+  },
+  {
+    "PlaceOne": "Petrovaradin",
+    "PlaceTwo": "Indjija",
+    "TravelTime": 16
+
+  },
+  {
+    "PlaceOne": "Petrovaradin",
+    "PlaceTwo": "Zemun",
+    "TravelTime": 40
+
+  },
+  {
+    "PlaceOne": "Petrovaradin",
+    "PlaceTwo": "Beograd",
+    "TravelTime": 51
+
+  },
+  {
+    "PlaceOne": "Indjija",
+    "PlaceTwo": "Zemun",
+    "TravelTime": 23
+
+  },
+  {
+    "PlaceOne": "Indjija",
+    "PlaceTwo": "Beograd",
+    "TravelTime": 34
+
+  },
+  {
+    "PlaceOne": "Zemun",
+    "PlaceTwo": "Beograd",
+    "TravelTime": 10
+
+  }
+
+]
+    

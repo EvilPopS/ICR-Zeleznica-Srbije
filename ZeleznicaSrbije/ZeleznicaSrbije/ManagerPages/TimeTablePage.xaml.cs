@@ -65,5 +65,18 @@ namespace ZeleznicaSrbije.ManagerPages
                 TimetableCollection.Add(createTimetableDTO(timetable));
             }
         }
+
+        private void addNewRideButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewRide addRideWindow = new AddNewRide();
+            addRideWindow.addNewRideClicked += createNewRide;
+            addRideWindow.ShowDialog();
+        }
+
+        private void createNewRide(Timetable newRide)
+        {
+            TimetableCollection.Add(createTimetableDTO(newRide));
+            _timetableService.addNewRideToTimetable(newRide);
+        }
     }
 }

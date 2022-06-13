@@ -17,6 +17,11 @@ namespace ZeleznicaSrbije.API.CRUD {
         }
 
 
+        public void addNewRide(Timetable newRide)
+        {
+            _timetables.Entities.Add(newRide);
+            FileReaderWriter.UpdateFile(FILE_PATH, _timetables);
 
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace ZeleznicaSrbije.API.Services
         {
             return timetableCRUD.GetTimetable();
         }
+
+        public void addNewRideToTimetable(Timetable newRide)
+        {
+            timetableCRUD.addNewRide(newRide);
+        }
     }
 }

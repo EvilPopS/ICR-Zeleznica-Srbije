@@ -27,5 +27,10 @@ namespace ZeleznicaSrbije.API.Services
             return trainLineCRUD.getTrainLineById(id);
         }
 
+        public TrainLine getTrainLineByMidleStations(List<string> midleStations)
+        {
+            return trainLineCRUD.getTrainLineByMidleStations(midleStations);
+        }
+
     }
 }

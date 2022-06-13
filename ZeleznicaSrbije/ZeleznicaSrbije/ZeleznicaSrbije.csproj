@@ -91,13 +91,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
+    <Compile Include="API\DTOs\RelationDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
+    <Compile Include="API\Models\Station.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
     <Compile Include="API\Services\RegularUserService.cs" />
+    <Compile Include="API\Services\StationsService.cs" />
     <Compile Include="API\Services\TimetableService.cs" />
     <Compile Include="API\Services\TrainLineService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
+    <Compile Include="ManagerPages\AddNewRide.xaml.cs">
+      <DependentUpon>AddNewRide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
       <DependentUpon>AddTrainWindow.xaml</DependentUpon>
     </Compile>
@@ -137,6 +143,10 @@
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ManagerPages\AddNewRide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\AddTrainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +273,7 @@
     </EmbeddedResource>
     <None Include="Database\DataFiles\managers.json" />
     <None Include="Database\DataFiles\regular_users.json" />
+    <None Include="Database\DataFiles\stations.json" />
     <None Include="Database\DataFiles\tickets.json" />
     <None Include="Database\DataFiles\timetables.json" />
     <None Include="Database\DataFiles\trains.json" />

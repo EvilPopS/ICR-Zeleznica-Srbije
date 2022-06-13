@@ -35,7 +35,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Style="{StaticResource addButton}" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0 8 12 0">
+        <Button Style="{StaticResource addButton}" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0 8 12 0" Click="addNewRideButton_Click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
                 <TextBlock Text="Dodaj novu vožnju"/>
@@ -55,7 +55,7 @@
         <DataGrid Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Top" x:Name="TimetableData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
-                    <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="1.2*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -68,7 +68,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Capacity" Binding="{Binding To}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Capacity" Binding="{Binding To}" IsReadOnly="True" Width="1.2*"/>
                 <DataGridTextColumn Header="Email Address" Binding="{Binding StartTime}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Phone Number" Binding="{Binding EndTime}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Phone Number" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*"/>

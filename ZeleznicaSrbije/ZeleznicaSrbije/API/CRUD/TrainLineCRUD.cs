@@ -21,15 +21,28 @@ namespace ZeleznicaSrbije.API.CRUD {
             return _trainLines.Entities;
         }
 
-        internal TrainLine getTrainLineById(int id)
+        public TrainLine getTrainLineById(int id)
         {
-            foreach (var line in GetTrainLines())
+            foreach (var line in _trainLines.Entities)
             {
                 if (line.Id == id)
                 {
                     return line;
                 }
             }
+            return null;
+        }
+
+        public TrainLine getTrainLineByMidleStations(List<string> midleStations)
+        {
+            foreach(var line in _trainLines.Entities)
+            {
+                if (line.MidlePlaces.All(midleStations.Contains))
+                {
+                    return line;
+                }
+            }
+
             return null;
         }
     }
