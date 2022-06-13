@@ -47,5 +47,21 @@ namespace ZeleznicaSrbije.API.CRUD {
             }
             return null;
         }
+
+        public bool DeleteRide(int Id)
+        {
+            foreach(var ride in _timetables.Entities)
+            {
+                if(ride.Id == Id)
+                {
+                    _timetables.Entities.Remove(ride);
+                    FileReaderWriter.UpdateFile(FILE_PATH, _timetables);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }

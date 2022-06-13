@@ -159,5 +159,27 @@ namespace ZeleznicaSrbije.ManagerPages
             OkPopUp okPopUp = new OkPopUp("Uspešno ste izmenili vožnju.");
             okPopUp.ShowDialog();
         }
+
+        private void deleteRideButton_Click(object sender, RoutedEventArgs e)
+        {
+            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp("Da li sigurno želite da obrišete ovu vožnju?");
+            deletePopUp.YesClicked += PopUpClicked;
+            deletePopUp.ShowDialog();
+        }
+
+        private void PopUpClicked(bool yes)
+        {
+            if (yes)
+            {
+                Timetable selRide = _timetableService.GetTimetableById(((ManagerTimetableDTO)TimetableData.SelectedItem).TimetableId);
+                _timetableService.DeleteRide(selRide.Id);
+                //bool isDeleted = TimetableCollection.Remove(createTimetableDTO(selRide));
+                TimetableCollection.Remove(TimetableCollection.Where(i => i.TimetableId == selRide.Id).Single());
+                TimetableData.ItemsSource = TimetableCollection;
+
+                OkPopUp okPopUp = new OkPopUp("Uspešno ste obrisali vožnju.");
+                okPopUp.ShowDialog();
+            }
+        }
     }
 }

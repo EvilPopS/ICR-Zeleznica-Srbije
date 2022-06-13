@@ -32,5 +32,10 @@ namespace ZeleznicaSrbije.API.Services
         {
             return _timetableCRUD.updateRide(editedRide);
         }
+
+        public bool DeleteRide(int id)
+        {
+            return _timetableCRUD.DeleteRide(id);
+        }
     }
 }

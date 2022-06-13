@@ -18,14 +18,6 @@
       "IsDeleted": false
     },
     {
-      "Id": 2,
-      "TrainServiceId": 0,
-      "TrainId": 4,
-      "Start": "14:30:00",
-      "End": "15:27:00",
-      "IsDeleted": false
-    },
-    {
       "Id": 3,
       "TrainServiceId": 0,
       "TrainId": 5,
