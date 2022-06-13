@@ -10,5 +10,12 @@ namespace ZeleznicaSrbije.API.CRUD {
         public TimetableCRUD() {
             _timetables = FileReaderWriter.ReadFile<Timetable>(FILE_PATH);
         }
+
+        public Timetable GetById(int timetableId) {
+            foreach (Timetable tt in _timetables.Entities)
+                if (tt.Id == timetableId)
+                    return tt;
+            return null;
+        }
     }
 }

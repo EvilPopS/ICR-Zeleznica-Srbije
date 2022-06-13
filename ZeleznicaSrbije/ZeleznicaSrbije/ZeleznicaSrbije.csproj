@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7AC973D6-11EC-456E-BF70-1ECD8B259675}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>ZeleznicaSrbije</RootNamespace>
     <AssemblyName>ZeleznicaSrbije</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -90,10 +90,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\DTOs\ShowTicketDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
     <Compile Include="API\Services\RegularUserService.cs" />
+    <Compile Include="API\Services\TicketsService.cs" />
+    <Compile Include="API\Services\TimetableService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
     <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
       <DependentUpon>AddTrainWindow.xaml</DependentUpon>
@@ -124,6 +127,9 @@
     </Compile>
     <Compile Include="RegularUserPages\RegularUserMM.xaml.cs">
       <DependentUpon>RegularUserMM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegularUserPages\TicketsPage.xaml.cs">
+      <DependentUpon>TicketsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegularUserPages\UserProfilePage.xaml.cs">
       <DependentUpon>UserProfilePage.xaml</DependentUpon>
@@ -205,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegularUserPages\RegularUserMM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegularUserPages\TicketsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -325,6 +335,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\reports-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\already-bought-icon.png" />
+    <Resource Include="Assets\Images\already-reserved-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />

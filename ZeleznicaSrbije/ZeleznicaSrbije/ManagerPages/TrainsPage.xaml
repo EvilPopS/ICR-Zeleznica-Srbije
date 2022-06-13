@@ -17,7 +17,7 @@
         </ListView>-->
         <StackPanel Orientation="Horizontal">
             <Label Content="Broj voza" Margin="45 40 0 50" FontSize="14"/>
-            <Label Content="Kapacitet" Margin="65 40 0 0" FontSize="14"/>
+            <Label Content="Kapacitet" Margin="70 40 0 50" FontSize="14"/>
             <Button Style="{StaticResource addButton}" Margin="330 0 0 300" Click="addNewtrainButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
@@ -42,8 +42,8 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Capacity" Binding="{Binding Capacity}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Email Address" Binding="{Binding Email}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Phone Number" Binding="{Binding Phone}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -6,12 +6,10 @@ using ZeleznicaSrbije.RegularUserPages;
 namespace ZeleznicaSrbije {
     public partial class RegularUserWindow : Window {
         private readonly RegularUserMM _userMM;
-        private readonly RegularUserService _userService;
         private readonly RegularUser _userData; 
 
         public RegularUserWindow(string userEmail) {
-            _userService = new RegularUserService();
-            _userData = _userService.GetUserByEmail(userEmail);
+            _userData = new RegularUserService().GetUserByEmail(userEmail);
             InitializeComponent();
 
             _userMM = new RegularUserMM();
@@ -25,6 +23,9 @@ namespace ZeleznicaSrbije {
             switch (pageName) {
                 case "PROFILE":
                     WinContent.Content = new UserProfilePage(_userData, this);
+                    break;
+                case "TICKETS":
+                    WinContent.Content = new TicketsPage(_userData.Id);
                     break;
             }
         }

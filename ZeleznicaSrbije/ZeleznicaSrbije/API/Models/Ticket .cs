@@ -10,6 +10,7 @@ namespace ZeleznicaSrbije.API.Models {
 		private bool isReserved;
 		private bool isBought;
 		private bool isActive;
+        private string seatNumber;
 
 
         public int Id { get => id; set => id = value; }
@@ -20,5 +21,6 @@ namespace ZeleznicaSrbije.API.Models {
         public bool IsReserved { get => isReserved; set => isReserved = value; }
         public bool IsBought { get => isBought; set => isBought = value; }
         public bool IsActive { get => isActive; set => isActive = value; }
+        public string SeatNumber { get => seatNumber; set => seatNumber = value; }
     }
 }
