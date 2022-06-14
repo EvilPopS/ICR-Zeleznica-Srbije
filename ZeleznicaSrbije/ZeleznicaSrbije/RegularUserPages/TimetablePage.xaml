@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ZeleznicaSrbije.RegularUserPages"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="407" d:DesignWidth="770"
       Title="TimetablePage">
@@ -67,57 +68,85 @@
 
         <Grid Grid.Column="1" Margin="0 10 10 0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.8*"/>
                 <RowDefinition Height="8*"/>
+                <RowDefinition Height="0.8*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.9*"/>
+                <ColumnDefinition Width="1.1*"/>
+                <ColumnDefinition Width="1.1*"/>
+                <ColumnDefinition Width="0.9*"/>
             </Grid.ColumnDefinitions>
 
             <Label Content="Oznaka voza" Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Content="Vreme polaska" Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Content="Vreme dolaska" Grid.Column="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
-            <Label Content="Trajanje putovanja" Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Trajanje" Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
 
-            <DataGrid Grid.Row="1" Grid.ColumnSpan="4" x:Name="TimeTablesList" RowStyle="{DynamicResource DataGridRowStyle1}"
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="5" x:Name="TimeTablesList" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" 
-                  Style="{DynamicResource DataGridStyle1}">
+                  Style="{DynamicResource DataGridStyle1}" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="TrainNumber" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="TrainNumber" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="0.9*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime, StringFormat=hh\\:mm\\ \\h}" IsReadOnly="True" Width="1.1*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime, StringFormat=hh\\:mm\\ \\h}" IsReadOnly="True" Width="1.1*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="TravelTime" Binding="{Binding TravelTime, StringFormat=hh\\:mm}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="TravelTime" Binding="{Binding TravelTime, StringFormat=hh\\:mm\\ \\h}" IsReadOnly="True" Width="0.9*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    
+
                 </DataGrid.Columns>
             </DataGrid>
+
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Grid.ColumnSpan="4" Orientation="Horizontal">
+                <Button Grid.Row="4" FontSize="14" FontWeight="Black" Width="170" Margin="0 0 10 5" HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Center" Background="#A91BD8" Click="Buy_Click">
+                    <StackPanel Orientation="Horizontal" Margin="0 2 0 0" >
+                        <Image Source="../Assets/Images/shopping-cart-icon.png" />
+                        <TextBox Text="KUPI KARTU" Background="Transparent" BorderThickness="0 0 0 0 " IsReadOnly="True" PreviewMouseLeftButtonUp="Buy_Click"/>
+                    </StackPanel>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Grid.Row="4" FontSize="15" FontWeight="Black" Width="170" Margin="10 0 0 5"  
+                          HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="#059C71" Click="Reserve_Click">
+                    <StackPanel Orientation="Horizontal" Margin="0 2 0 0">
+                        <Image Source="../Assets/Images/reserve-icon.png"/>
+                        <TextBox Text="REZERVIŠI KARTU" Background="Transparent" BorderThickness="0 0 0 0" IsReadOnly="True" PreviewMouseLeftButtonUp="Reserve_Click"/>
+                    </StackPanel>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
             
         </Grid>
     </Grid>

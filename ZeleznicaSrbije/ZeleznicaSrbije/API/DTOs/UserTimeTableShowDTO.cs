@@ -2,7 +2,7 @@
 using ZeleznicaSrbije.API.Models;
 
 namespace ZeleznicaSrbije.API.DTOs {
-    internal class UserTimeTableShowDTO {
+    public class UserTimeTableShowDTO {
         public string TrainNumber { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }

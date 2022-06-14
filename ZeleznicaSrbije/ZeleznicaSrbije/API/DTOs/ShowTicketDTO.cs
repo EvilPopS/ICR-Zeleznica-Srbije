@@ -13,12 +13,12 @@ namespace ZeleznicaSrbije.API.DTOs {
         public bool IsBought { get; set; }
 
 
-        public ShowTicketDTO(Ticket ticket, Timetable timetable, Train train) {
+        public ShowTicketDTO(Ticket ticket) {
             SeatNumber = ticket.SeatNumber;
             ValidityDate = ticket.ValidityDate.Date.ToString().Split(' ')[0];
-            TrainNumber = train.TrainNumber;
-            StartTime = timetable.Start;
-            EndTime = timetable.End;
+            TrainNumber = ticket.TrainNum;
+            StartTime = ticket.StartTime;
+            EndTime = ticket.EndTime;
             StartPlace = "Novi Sad";
             EndPlace = "Beograd";
             IsBought = ticket.IsBought;
