@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZeleznicaSrbije.API.Models;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.ManagerPages
 {
@@ -29,6 +30,9 @@ namespace ZeleznicaSrbije.ManagerPages
 
         private void addNewTrain_Click(object sender, RoutedEventArgs e)
         {
+            if (!CheckForm())
+                return;
+
             Train newTrain = new Train { TrainNumber = newTrainNumber.Text,
                 Capacity = Int32.Parse(newTrainNoCols.Text) * Int32.Parse(newTrainNoRows.Text),
                 IsDeleted = false,
@@ -37,6 +41,14 @@ namespace ZeleznicaSrbije.ManagerPages
             };
             addTrainClicked?.Invoke(newTrain);
             this.Close();
+        }
+
+        private bool CheckForm() {
+            InformPopUp popUp = null;
+            if (newTrainNoCols.Text == "" || newTrainNoRows.Text == "" || newTrainNumber.Text == "")
+                popUp = new InformPopUp("", true);
+            popUp?.ShowDialog();
+            return popUp != null;
         }
     }
 }

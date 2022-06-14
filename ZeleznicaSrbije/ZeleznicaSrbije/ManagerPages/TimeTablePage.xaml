@@ -18,7 +18,8 @@
         
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -26,7 +27,6 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.3*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -35,44 +35,59 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Style="{StaticResource addButton}" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0 8 12 0" Click="addNewRideButton_Click">
+        <Button Style="{StaticResource addButton}" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0 8 12 0" Click="addNewRideButton_Click">
             <StackPanel Orientation="Horizontal">
-                <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
-                <TextBlock Text="Dodaj novu vožnju"/>
+                <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" />
+                <TextBlock Text="Dodaj vožnju"/>
             </StackPanel>
         </Button>
 
 
-        <Label Grid.Row ="0" Grid.Column="1"  Content="Mesto polaska" Margin="20 0 0 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-        <Label Grid.Row="0" Grid.Column="2" Content="Mesto dolaska"  Margin="0 0 15 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="0" Grid.Column="3" Content="Vreme polaska"  Margin="0 0 20 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="0" Grid.Column="4" Content="Vreme dolaska"  Margin="0 0 0 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="0" Grid.Column="5" Content="Broj voza"  Margin="0 0 0 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-            
+        <Label Grid.Row ="1" Grid.Column="0"  Content="Mesto polaska" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom" />
+        <Label Grid.Row="1" Grid.Column="1" Content="Mesto dolaska"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="2" Content="Vreme polaska"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="3" Content="Vreme dolaska"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="4" Content="Broj voza"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Bottom"/>
         
         
-        
-        <DataGrid Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Top" x:Name="TimetableData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"  >
+        <DataGrid Grid.Row="2" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Top" x:Name="TimetableData" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  Style="{DynamicResource DataGridStyle1}"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
-                    <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="1.2*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
-                                        <Image Source="../Assets/Images/train-icon.jpg"  Width="30" Height="28" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
-                                    </Border>
-
-                                    <TextBlock Text="{Binding From}" VerticalAlignment="Center"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Capacity" Binding="{Binding To}" IsReadOnly="True" Width="1.2*"/>
-                <DataGridTextColumn Header="Email Address" Binding="{Binding StartTime}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Phone Number" Binding="{Binding EndTime}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Phone Number" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*"/>
-                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                <DataGridTextColumn Header="From" Binding="{Binding From}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="To" Binding="{Binding To}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="TrainNumber" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
