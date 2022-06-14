@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.ManagerPages {
     public partial class TrainsPage : Page
@@ -56,8 +57,8 @@ namespace ZeleznicaSrbije.ManagerPages {
             _trainsService.AddTrain(newTrain);
             TrainsCollection.Add(newTrain);
 
-            OkPopUp okPopUp = new OkPopUp("Uspešno ste dodali novi voz.");
-            okPopUp.ShowDialog();
+            InformPopUp popUp = new InformPopUp("Uspešno ste dodali novi voz u sistem!", false);
+            popUp.ShowDialog();
         }
 
         private void TrainsData_SelectionChanged(object sender, SelectionChangedEventArgs e)

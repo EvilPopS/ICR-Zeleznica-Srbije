@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using ZeleznicaSrbije.API.DTOs;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.ManagerPages
 {
@@ -167,12 +168,6 @@ namespace ZeleznicaSrbije.ManagerPages
             
         }
 
-
-
-
-
-
-
         private void addNewRide_Click(object sender, RoutedEventArgs e)
         {
             //Train newTrain = new Train
@@ -183,8 +178,28 @@ namespace ZeleznicaSrbije.ManagerPages
             //    NoCols = Int32.Parse(newTrainNoCols.Text),
             //    NoRows = Int32.Parse(newTrainNoRows.Text),
             //};
+
+            if (!CheckFields())
+                return;
             addNewRideClicked?.Invoke(newRide);
             this.Close();
+            InformPopUp popUp = new InformPopUp("Vožnja je uspešno dodata u sistem!", false);
+            popUp.ShowDialog();
+        }
+
+        private bool CheckFields() {
+            var relations = Relations.SelectedItem;
+            var middleStations = Midlestations.SelectedItem;
+            var hours = StartHours.SelectedItem;
+            var minutes = StartMinutes.SelectedItem;
+            var trainNumber = TrainNumber.SelectedItem;
+
+            InformPopUp popUp = null;
+            if (relations == null || middleStations == null || hours == null
+                || minutes == null || trainNumber == null)
+                popUp = new InformPopUp("Morate popuniti sva polja da bi dodali vožnju.", true);
+            popUp?.ShowDialog();
+            return popUp == null;
         }
     }
 }

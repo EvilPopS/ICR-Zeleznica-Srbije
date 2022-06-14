@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using ZeleznicaSrbije.API.DTOs;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.ManagerPages
 {
@@ -156,8 +157,8 @@ namespace ZeleznicaSrbije.ManagerPages
             Timetable successfullyEditedRide = _timetableService.updateRide(editedRide);
             updateTimetableCollection(successfullyEditedRide);
 
-            OkPopUp okPopUp = new OkPopUp("Uspešno ste izmenili vožnju.");
-            okPopUp.ShowDialog();
+            InformPopUp popUp = new InformPopUp("Uspešno ste izmenili vožnju.", false);
+            popUp.ShowDialog();
         }
 
         private void deleteRideButton_Click(object sender, RoutedEventArgs e)
@@ -177,8 +178,8 @@ namespace ZeleznicaSrbije.ManagerPages
                 TimetableCollection.Remove(TimetableCollection.Where(i => i.TimetableId == selRide.Id).Single());
                 TimetableData.ItemsSource = TimetableCollection;
 
-                OkPopUp okPopUp = new OkPopUp("Uspešno ste obrisali vožnju.");
-                okPopUp.ShowDialog();
+                InformPopUp popUp = new InformPopUp("Uspešno ste obrisali vožnju.", false);
+                popUp.ShowDialog();
             }
         }
     }
