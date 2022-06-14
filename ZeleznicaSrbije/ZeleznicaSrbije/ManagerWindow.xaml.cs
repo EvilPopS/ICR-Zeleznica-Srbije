@@ -1,6 +1,8 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.Help;
 using ZeleznicaSrbije.ManagerPages;
 
 namespace ZeleznicaSrbije {
@@ -38,6 +40,18 @@ namespace ZeleznicaSrbije {
                     WinContent.Content = new TrainLinesPage();
                     break;
             }
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e) {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+            if (focusedControl is DependencyObject) {
+                string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                HelpProvider.ShowHelp("ManagerHelp", this);
+            }
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e) {
+            e.CanExecute = true;
         }
     }
 }
