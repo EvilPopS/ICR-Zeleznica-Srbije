@@ -74,16 +74,34 @@ namespace ZeleznicaSrbije.ManagerPages
             List<string> placeNames = tl.MiddlePlaces;
             placeNames.Add(tl.PlaceStart);
             placeNames.Add(tl.PlaceEnd);
-
-            return new ManagerTrainLineDTO
+            ManagerTrainLineDTO newDTO = new ManagerTrainLineDTO
             {
                 TrainLineId = tl.Id,
                 PlaceStart = tl.PlaceStart,
                 PlaceEnd = tl.PlaceEnd,
-                MiddleStations = tl.MiddlePlaces.Count == 0 ? "Na ovoj liniji nema međustanica." : String.Join(",", tl.MiddlePlaces),
+                MiddleStations = generateMiddlePlaces(tl),
                 AllPlacesIds = _placeService.getAllIds(), // sva mesta
                 PlaceNames = placeNames
             };
+            newDTO.MiddleStations.Remove(0);
+            newDTO.MiddleStations.Remove(newDTO.MiddleStations.Length - 1);
+            return newDTO;
+        }
+
+        private string generateMiddlePlaces(TrainLine tl)
+        {
+            if (tl.MiddlePlaces.Count == 0)
+            {
+
+                return "Na ovoj liniji nema međustanica.";
+            }else if (tl.MiddlePlaces.Count == 1) 
+            { 
+                return tl.MiddlePlaces[0];
+            }
+            else { 
+                return String.Join(",", tl.MiddlePlaces); 
+            }
+               
         }
 
         private void deleteTrainLineButton_Click(object sender, RoutedEventArgs e)
@@ -114,6 +132,29 @@ namespace ZeleznicaSrbije.ManagerPages
         {
             VisualizedTrainLines visualizedTrainLines = new VisualizedTrainLines((ManagerTrainLineDTO)TrainlinesData.SelectedItem);
             visualizedTrainLines.ShowDialog();
+        }
+
+        private void addNewTrainLineButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewTrainLine addNewTrainLineWindow = new AddNewTrainLine();
+            addNewTrainLineWindow.addNewTrainLineClicked += addNewTrainLine;
+            addNewTrainLineWindow.ShowDialog();
+        }
+
+        private void addNewTrainLine(TrainLine newTrainLine)
+        {
+            TrainLineCollection.Add(createTrainLineDTO(newTrainLine));
+            OkPopUp okPopUp = new OkPopUp("Uspešno ste dodali novu voznu liniju.");
+            okPopUp.ShowDialog();
+
+            //new ManagerTrainLineDTO
+            //{
+            //    PlaceStart = newTrainLine.PlaceStart,
+            //    PlaceEnd = newTrainLine.PlaceEnd,
+            //    MiddleStations = newTrainLine.MiddlePlaces.Count >= 1 ? String.Join(",", newTrainLine.MiddlePlaces) : newTrainLine.MiddlePlaces[0]
+            //});
+
+
         }
     }
 }
