@@ -105,6 +105,10 @@
     <Compile Include="API\Services\TimetableService.cs" />
     <Compile Include="API\Services\TrainLineService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
+    <Compile Include="Help\HelpProvider.cs" />
+    <Compile Include="Help\HelpViewer.xaml.cs">
+      <DependentUpon>HelpViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowPages\InformPopUp.xaml.cs">
       <DependentUpon>InformPopUp.xaml</DependentUpon>
     </Compile>
@@ -162,6 +166,10 @@
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Help\HelpViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindowPages\InformPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -404,6 +412,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\exlamation-mark-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Images\help-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Help\Images\buy_page.png" />
+    <Resource Include="Help\Images\reserve_page.png" />
+    <Resource Include="Help\Images\schedule_page.png" />
+    <Resource Include="Help\Images\tickets_page.png" />
+    <Resource Include="Help\Images\user_profile_page.png" />
+    <Resource Include="Help\Images\login_page_img.png" />
+    <Resource Include="Help\Images\register_page_img.png" />
+    <Content Include="Help\Pages\AdminHelp.html" />
+    <Content Include="Help\Pages\LoginRegisterHelp.html" />
+    <Content Include="Help\Pages\UserHelp.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />

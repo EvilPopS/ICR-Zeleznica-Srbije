@@ -1,5 +1,7 @@
 using System.Windows;
+using System.Windows.Input;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.Help;
 using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije {
@@ -29,6 +31,18 @@ namespace ZeleznicaSrbije {
                     WinContent.Content = new RegisterPage(_loginRegisterService);
                     break;
             }
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e) {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[0]);
+            if (focusedControl is DependencyObject) {
+                string str = HelpProvider.GetHelpKey((DependencyObject)focusedControl);
+                HelpProvider.ShowHelp("LoginRegisterHelp", this);
+            }
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e) {
+            e.CanExecute = true;
         }
     }
 }
