@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:l="clr-namespace:ZeleznicaSrbije.Help"
     xmlns:local="clr-namespace:ZeleznicaSrbije"
     mc:Ignorable="d"
     Title="Železnica Srbije" 
@@ -14,7 +15,12 @@
     MaxWidth="770"
     MinHeight="430"
     MinWidth="660"
+    l:HelpProvider.HelpKey="LoginRegisterHelp"
 >
+    <Window.CommandBindings>
+        <CommandBinding Command="NavigationCommands.BrowseBack" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />

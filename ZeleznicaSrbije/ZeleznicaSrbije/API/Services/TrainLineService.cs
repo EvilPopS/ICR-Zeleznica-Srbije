@@ -69,7 +69,7 @@ namespace ZeleznicaSrbije.API.Services {
                     }
 
                     if (isEndFound) {
-                        TimeSpan startTime = timetableService.GetTimetableById(tl.TimetableIds[foundStartPlace]).Start; ;
+                        TimeSpan startTime = timetableService.GetTimetableById(tl.TimetableIds[foundStartPlace]).Start;
                         TimeSpan endTime = timetableService.GetTimetableById(tl.TimetableIds[foundEndPlace - 1]).End;
 
                         DTOs.Add(
