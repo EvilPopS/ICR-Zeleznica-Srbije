@@ -19,35 +19,23 @@ namespace ZeleznicaSrbije.MainWindowPages {
             string email = emailInpField.Text;
             string password = passwordInpField.Password.ToString();
 
-            if (name == "" || surname == "" || email == "" || password == "")
-                ShowPopUp("Sva polja forme za registraciju moraju da budu popunjena.", true);
+            InformPopUp popUp;
+            if (name == "" || surname == "" || email == "" || password == "") {
+                popUp = new InformPopUp("Sva polja forme za registraciju moraju da budu popunjena.", true);
+            }
             else if (_registerService.RegisterNewUser(name, surname, email, password)) {
                 nameInpField.Text = "";
                 surnameInpField.Text = "";
                 emailInpField.Text = "";
                 passwordInpField.Password = "";
-                ShowPopUp("Registracija je bila uspešna!\nSada možete da pređete na prozor za prijavu na sistem.", false);
+                popUp = new InformPopUp("Registracija je bila uspešna!\nSada možete da pređete na prozor za prijavu na sistem.", false);
             }
-            else
-                ShowPopUp("Email je već zauzet.\nPokušajte nešto drugo.", true);
+            else {
+                popUp = new InformPopUp("Email je već zauzet.\nPokušajte nešto drugo.", true);
+            }
+            popUp?.ShowDialog();
         }
 
-        private void ShowPopUp(string message, bool isError) {
-            SetPopUpIcon(isError);
-            PopUpText.Text = message;
-            PopUp.IsOpen = true;
-        }
 
-        private void SetPopUpIcon(bool isError) {
-            if (isError) 
-                PopUpIcon.Source = new BitmapImage(new Uri(@"..\Assets\Images\warning-sign-icon.png", UriKind.Relative));
-            else
-                PopUpIcon.Source = new BitmapImage(new Uri(@"..\Assets\Images\task-success-icon.png", UriKind.Relative));
-        }
-
-        private void ClosePopUp(object sender, RoutedEventArgs e) {
-            PopUpText.Text = "";
-            PopUp.IsOpen = false;
-        }
     }
 }

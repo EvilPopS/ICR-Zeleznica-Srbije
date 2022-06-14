@@ -105,6 +105,9 @@
     <Compile Include="API\Services\TimetableService.cs" />
     <Compile Include="API\Services\TrainLineService.cs" />
     <Compile Include="API\Services\TrainsService.cs" />
+    <Compile Include="MainWindowPages\InformPopUp.xaml.cs">
+      <DependentUpon>InformPopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\AddNewRide.xaml.cs">
       <DependentUpon>AddNewRide.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Compile Include="RegularUserWindow.xaml.cs">
       <DependentUpon>RegularUserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="MainWindowPages\InformPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerPages\AddNewRide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -394,6 +401,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\reserve-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\exlamation-mark-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
