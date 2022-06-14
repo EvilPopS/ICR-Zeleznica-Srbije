@@ -13,8 +13,6 @@ namespace ZeleznicaSrbije.MainWindowPages {
             InitializeComponent();
             _wind = wind;
             _loginService = loginService;
-            emailInpField.Text = "user1@gmail.com";
-            passwordInpField.Password = "sifra123";
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e) {

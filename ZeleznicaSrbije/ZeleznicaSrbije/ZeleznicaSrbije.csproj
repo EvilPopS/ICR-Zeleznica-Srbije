@@ -455,7 +455,18 @@
     <Resource Include="Help\Images\user_profile_page.png" />
     <Resource Include="Help\Images\login_page_img.png" />
     <Resource Include="Help\Images\register_page_img.png" />
-    <Content Include="Help\Pages\AdminHelp.html" />
+    <Resource Include="Help\Images\add_timetable.png" />
+    <Resource Include="Help\Images\add_train.png" />
+    <Resource Include="Help\Images\delete_timetable.png" />
+    <Resource Include="Help\Images\delete_train.png" />
+    <Resource Include="Help\Images\edit_timetable.png" />
+    <Resource Include="Help\Images\edit_train.png" />
+    <Resource Include="Help\Images\manager_profile.png" />
+    <Resource Include="Help\Images\manager_schedule.png" />
+    <Resource Include="Help\Images\manager_train_lines.png" />
+    <Resource Include="Help\Images\network_view.png" />
+    <Resource Include="Help\Images\manager_trains.png" />
+    <Content Include="Help\Pages\ManagerHelp.html" />
     <Content Include="Help\Pages\LoginRegisterHelp.html" />
     <Content Include="Help\Pages\UserHelp.html" />
   </ItemGroup>
