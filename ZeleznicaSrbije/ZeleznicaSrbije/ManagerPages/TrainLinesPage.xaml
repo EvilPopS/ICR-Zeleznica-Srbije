@@ -40,6 +40,7 @@
                 <TextBlock Text="Dodaj novu liniju"/>
             </StackPanel>
         </Button>
+        
 
 
         <Label Grid.Row ="0" Grid.Column="1"  Content="Mesto polaska" Margin="20 0 0 0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
@@ -74,12 +75,16 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}" >
+                                <Button x:Name="visualizeButton" Click="VisualizeLinesButton_Clicked" Margin="2 0 0 0" Style="{StaticResource gridVisualizeButton}" >
+                                    <Icon:PackIconMaterial Kind="Eye" Style="{StaticResource gridButtonIcon}" />
+                                </Button>
+                                <Button Style="{StaticResource gridEditButton}" Margin="2 0 0 0" >
                                     <Icon:PackIconMaterial Kind="PencilOutline"  Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
-                                <Button x:Name="deleteTrainButton"  Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="deleteTrainLineButton_Click" >
+                                <Button x:Name="deleteTrainButton"  Margin="2 0 0 0" Style="{StaticResource gridRemoveButton}" Click="deleteTrainLineButton_Click" >
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}" />
                                 </Button>
+                                
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

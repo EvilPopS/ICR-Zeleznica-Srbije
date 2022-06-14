@@ -12,8 +12,12 @@ namespace ZeleznicaSrbije.API.DTOs
         private string placeEnd;
         private string middleStations;
         private int trainLineId;
+        private List<int> allPlacesIds;
+        private List<string> placeNames;
 
+        public List<string> PlaceNames { get { return placeNames; } set { placeNames = value; } }
 
+        public List<int> AllPlacesIds { get { return allPlacesIds; } set { allPlacesIds = value; } }
         public int TrainLineId { get { return trainLineId; } set { trainLineId = value; } }
         public string PlaceStart { get { return placeStart; } set { placeStart = value; } } 
         public string PlaceEnd { get { return placeEnd; } set { placeEnd = value; } } 

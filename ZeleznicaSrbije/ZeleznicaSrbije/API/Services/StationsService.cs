@@ -20,6 +20,8 @@ namespace ZeleznicaSrbije.API.Services
 
         }
 
+        
+
         public int getTravelTimeByPlaceOneAndTwo(string placeOne, string placeTwo)
         {
             foreach(Station station in _stations)
