@@ -1,0 +1,46 @@
+﻿<Window x:Class="ZeleznicaSrbije.ManagerPages.AddTrainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZeleznicaSrbije.ManagerPages"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Dodavanje novog voza" 
+        Icon="../Assets/Images/train-icon.jpg"
+        Height="250" 
+        Width="480"
+        MaxHeight="250"
+        MaxWidth="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="trainAddTextBlock" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  
+                    FontSize="19" TextAlignment="Center" VerticalAlignment="Center" Text="Dodavanje novog voza" 
+                   />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Broj voza: "    FontSize="16"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Broj redova: "  FontSize="16"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="Broj kolona: "  FontSize="16"/>
+
+        <TextBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="newTrainNumber"   Width="120" Height="25"/>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="newTrainNoRows"   Width="120" Height="25"/>
+        <TextBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="newTrainNoCols"   Width="120" Height="25"/>
+
+        <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource addButton}" VerticalAlignment="Top" Click="addNewTrain_Click" HorizontalAlignment="Center" Margin="0,10,0,0" Height="25" Width="112">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
+                <TextBlock Text="Dodaj novi voz"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window> 

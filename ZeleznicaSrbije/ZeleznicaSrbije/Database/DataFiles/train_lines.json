@@ -1,0 +1,51 @@
+{
+  "NextInd": 3,
+  "Entities": [
+    {
+      "Id": 0,
+      "PlaceStart": "Novi Sad",
+      "PlaceEnd": "Beograd",
+      "TimetableIds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "MiddlePlaces": [
+        "Petrovaradin",
+        "Indjija",
+        "Zemun"
+      ],
+      "IsDeleted": false,
+      "TrainId": 0
+    },
+    {
+      "Id": 1,
+      "PlaceStart": "Petrovaradin",
+      "PlaceEnd": "Beograd",
+      "TimetableIds": [
+        4,
+        5,
+        3
+      ],
+      "MiddlePlaces": [
+        "Indjija",
+        "Zemun"
+      ],
+      "IsDeleted": false,
+      "TrainId": 1
+    },
+    {
+      "Id": 2,
+      "PlaceStart": "Novi Sad",
+      "PlaceEnd": "Beograd",
+      "TimetableIds": [
+        0
+      ],
+      "MiddlePlaces": [],
+      "IsDeleted": false,
+      "TrainId": 2
+    }
+
+  ]
+}

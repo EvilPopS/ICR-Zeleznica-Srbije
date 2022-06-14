@@ -1,0 +1,80 @@
+{
+  "NextInd": 5,
+  "Entities": [
+    {
+      "Id": 0,
+      "UserId": 0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "1",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
+    },
+    {
+      "Id": 1,
+      "UserId": 0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
+      "IsReserved": true,
+      "IsBought": false,
+      "IsActive": true,
+      "SeatNumber": "2",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
+    },
+    {
+      "Id": 2,
+      "UserId": 0,
+      "ValidityDate": "2022-06-15T00:00:00",
+      "Price": 100.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "1",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "06:40:00",
+      "TrainNum": "2703"
+    },
+    {
+      "Id": 3,
+      "UserId": 0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "3",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
+    },
+    {
+      "Id": 4,
+      "UserId": 0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
+      "IsReserved": false,
+      "IsBought": true,
+      "IsActive": true,
+      "SeatNumber": "4",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
+    }
+  ]
+}

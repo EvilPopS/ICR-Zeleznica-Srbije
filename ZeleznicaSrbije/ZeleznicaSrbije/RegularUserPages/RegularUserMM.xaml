@@ -1,0 +1,73 @@
+﻿<Page x:Class="ZeleznicaSrbije.RegularUserPages.RegularUserMM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZeleznicaSrbije.RegularUserPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="33" d:DesignWidth="770"
+      Title="RegularUserMM">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Theme/NavBarResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="Profile" Grid.Column="0" IsChecked="True" 
+                    Checked="Profile_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/profile-icon.jpg" Width="38" Height="26" />
+                <TextBlock Height="19">PROFIL</TextBlock>
+            </StackPanel>
+        </RadioButton>
+        
+        <RadioButton x:Name="TrainSchedule" Grid.Column="1"
+                    Checked="TrainSchedule_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/timetable-icon.png" Width="38" Height="26" />
+                <TextBlock Height="19">RED VOŽNJE</TextBlock>
+            </StackPanel>
+        </RadioButton>
+        
+       
+        <RadioButton x:Name="TrainLines" Grid.Column="2"
+                    Checked="TrainLines_Checked"
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}" 
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/lines-icon.jpg" Width="38" Height="34" />
+                <TextBlock Height="19">VOZNE LINIJE</TextBlock>
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton x:Name="Tickets" Grid.Column="3"
+                    Checked="Tickets_Checked"
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}" 
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/tickets-icon.jpg" Width="40" Height="28" />
+                <TextBlock Height="19">KARTE</TextBlock>
+            </StackPanel>
+        </RadioButton>
+    </Grid>
+</Page>

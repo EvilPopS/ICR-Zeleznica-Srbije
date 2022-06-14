@@ -1,0 +1,48 @@
+﻿<Page x:Class="ZeleznicaSrbije.LoginRegisterMM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZeleznicaSrbije"
+      mc:Ignorable="d" 
+      d:DesignHeight="33" d:DesignWidth="750"
+      Title="LoginRegisterMM">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Theme/NavBarResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <RadioButton x:Name="LoginRB" Grid.Column="0" IsChecked="True" 
+                    Checked="LoginRB_Checked"
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/login-icon.png" Width="38" Height="26" />
+                <TextBlock Height="19">LOGOVANJE</TextBlock>
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton Grid.Column="1"
+                    Checked="RadioButton_Checked"
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+        >
+            <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                <Image Source="../Assets/Images/registration-icon.png" Width="38" Height="26" />
+                <TextBlock Height="19">REGISTRACIJA</TextBlock>
+            </StackPanel>
+        </RadioButton>
+
+    </Grid>
+</Page>

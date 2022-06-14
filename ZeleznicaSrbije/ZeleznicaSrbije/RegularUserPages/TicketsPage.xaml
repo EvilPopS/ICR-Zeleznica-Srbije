@@ -1,0 +1,129 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZeleznicaSrbije.RegularUserPages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ZeleznicaSrbije.RegularUserPages.TicketsPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="407" d:DesignWidth="770"
+      Title="TicketsPage"
+>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Theme/NavBarResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Margin=" 0 10 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Br. sedišta" Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Datum polaska" Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Vreme polaska" Grid.Column="2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Vreme dolaska" Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Mesto polaska" Grid.Column="4" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Mesto dolaska" Grid.Column="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Oznaka voza" Grid.Column="6" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" x:Name="TicketsList" RowStyle="{DynamicResource DataGridRowStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" 
+                  Style="{DynamicResource DataGridStyle1}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="SeatNumber" Binding="{Binding SeatNumber}" IsReadOnly="True" Width="0.7*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="ValidityDate" Binding="{Binding ValidityDate}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="EndTime" Binding="{Binding EndTime}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="StartPlace" Binding="{Binding StartPlace}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="EndPlace" Binding="{Binding EndPlace}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="TrainNumber" Binding="{Binding TrainNumber}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="7" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <RadioButton x:Name="TrainSchedule" Grid.Column="0" IsChecked="True" Checked="BoughtTickets_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+            >
+                <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                    <Image Source="../Assets/Images/already-bought-icon.png" Width="47" Height="26" />
+                    <TextBlock Height="19"><Run Text="KUPLJENE KARTE"/></TextBlock>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="Trains" Grid.Column="1" Checked="ReservedTickets_Checked" 
+                    Style="{StaticResource NavBarRadioBtnStyle}"
+                    Template="{StaticResource NavBarRadioBtnTemplate}"
+            >
+                <StackPanel Orientation="Horizontal" Margin="0 0 15 0">
+                    <Image Source="../Assets/Images/already-reserved-icon.png" Width="53" Height="26" />
+                    <TextBlock Height="19"><Run Text="REZERVISANE KARTE"/></TextBlock>
+                </StackPanel>
+            </RadioButton>
+        </Grid>
+    </Grid>
+</Page>

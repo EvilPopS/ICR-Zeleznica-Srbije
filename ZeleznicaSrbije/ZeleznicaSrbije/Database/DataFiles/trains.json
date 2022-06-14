@@ -1,0 +1,108 @@
+{
+  "NextInd": 9,
+  "Entities": [
+    {
+      "Id": 0,
+      "TrainNumber": "2241",
+      "Capacity": 76,
+      "NoCols": 4,
+      "NoRows": 19,
+      "IsDeleted": false,
+      "Seats": [
+        {
+          "SeatNumber": 0,
+          "IsAvailable": false,
+          "UserId": 0
+        },
+        {
+          "SeatNumber": 0,
+          "IsAvailable": false,
+          "UserId": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "TrainNumber": "7792",
+      "Capacity": 90,
+      "NoCols": 2,
+      "NoRows": 45,
+      "IsDeleted": false,
+      "Seats": [
+        {
+          "SeatNumber": 0,
+          "IsAvailable": false,
+          "UserId": 0
+        },
+        {
+          "SeatNumber": 0,
+          "IsAvailable": false,
+          "UserId": 0
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "TrainNumber": "2703",
+      "Capacity": 40,
+      "NoCols": 2,
+      "NoRows": 20,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 3,
+      "TrainNumber": "1511",
+      "Capacity": 80,
+      "NoCols": 4,
+      "NoRows": 20,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 4,
+      "TrainNumber": "1989",
+      "Capacity": 7,
+      "NoCols": 1,
+      "NoRows": 7,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 5,
+      "TrainNumber": "2705",
+      "Capacity": 80,
+      "NoCols": 2,
+      "NoRows": 40,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 6,
+      "TrainNumber": "7787",
+      "Capacity": 96,
+      "NoCols": 3,
+      "NoRows": 32,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 7,
+      "TrainNumber": "1311",
+      "Capacity": 60,
+      "NoCols": 4,
+      "NoRows": 15,
+      "IsDeleted": false,
+      "Seats": []
+    },
+    {
+      "Id": 8,
+      "TrainNumber": "1111",
+      "Capacity": 44,
+      "NoCols": 4,
+      "NoRows": 11,
+      "IsDeleted": false,
+      "Seats": []
+    }
+  ]
+}
