@@ -33,6 +33,20 @@ namespace ZeleznicaSrbije.API.CRUD {
             return null;
         }
 
+        public bool DeleteTrainLine(int id)
+        {
+            foreach(var line in _trainLines.Entities)
+            {
+                if(line.Id == id)
+                {
+                    _trainLines.Entities.Remove(line);
+                    FileReaderWriter.UpdateFile(FILE_PATH, _trainLines);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public TrainLine getTrainLineByMidleStations(List<string> midleStations)
         {
             foreach(var line in _trainLines.Entities)

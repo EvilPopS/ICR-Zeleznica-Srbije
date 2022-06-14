@@ -1,0 +1,51 @@
+﻿[
+  {
+    "Id": 0,
+    "PlaceName": "Novi Sad",
+    "X": 165,
+    "Y": 25
+  },
+  {
+    "Id": 1,
+    "PlaceName": "Petrovaradin",
+    "X": 225,
+    "Y": 55
+  },
+  {
+    "Id": 2,
+    "PlaceName": "Indjija",
+    "X": 305,
+    "Y": 165
+  },
+  {
+    "Id": 3,
+    "PlaceName": "Zemun",
+    "X": 415,
+    "Y": 245
+  },
+  {
+    "Id": 4,
+    "PlaceName": "Beograd",
+    "X": 485,
+    "Y": 265
+  },
+  {
+    "Id": 5,
+    "PlaceName": "noname",
+    "X": 185,
+    "Y": 45
+  },
+  {
+    "Id": 6,
+    "PlaceName": "noname",
+    "X": 245,
+    "Y": 145
+  },
+  {
+    "Id": 7,
+    "PlaceName": "noname",
+    "X": 275,
+    "Y": 205
+  }
+
+]

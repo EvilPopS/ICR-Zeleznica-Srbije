@@ -98,11 +98,12 @@ namespace ZeleznicaSrbije.ManagerPages
         {
             ManagerTimetableDTO timetableDTO = new ManagerTimetableDTO
             {
+                TimetableId = timetable.Id,
                 From = _trainLineService.getTrainLineById(timetable.TrainServiceId).PlaceStart,
                 To = _trainLineService.getTrainLineById(timetable.TrainServiceId).PlaceEnd,
                 StartTime = timetable.Start.ToString(@"hh\:mm"),
                 EndTime = timetable.End.ToString(@"hh\:mm"),
-                TrainNumber = _trainsService.getTrainById(timetable.TrainServiceId).TrainNumber,
+                TrainNumber = _trainsService.getTrainById(timetable.TrainId).TrainNumber,
                 MidleStations = (String.Join(",", _trainLineService.getTrainLineById(timetable.TrainServiceId).MiddlePlaces))
             };
             return timetableDTO;
@@ -133,8 +134,52 @@ namespace ZeleznicaSrbije.ManagerPages
         {
             ManagerTimetableDTO selTimetable = (ManagerTimetableDTO)TimetableData.SelectedItem;
             EditRideWindow editRideWindow = new EditRideWindow(selTimetable, createHoursAndMinutesList(24), createHoursAndMinutesList(60), getPossibleRelations(), _trainsService.GetAllTrains());
+            editRideWindow.saveButtonClicked += editRide;
             editRideWindow.ShowDialog();
 
+        }
+
+        private void updateTimetableCollection(Timetable succEditedRide)
+        {
+            for (int i = 0; i < TimetableCollection.Count; i++)
+            {
+                if (succEditedRide.Id == TimetableCollection[i].TimetableId)
+                {
+                    TimetableCollection[i] = createTimetableDTO(succEditedRide);
+                    break;
+                }
+            }
+        }
+
+        private void editRide(Timetable editedRide)
+        {
+            Timetable successfullyEditedRide = _timetableService.updateRide(editedRide);
+            updateTimetableCollection(successfullyEditedRide);
+
+            OkPopUp okPopUp = new OkPopUp("Uspešno ste izmenili vožnju.");
+            okPopUp.ShowDialog();
+        }
+
+        private void deleteRideButton_Click(object sender, RoutedEventArgs e)
+        {
+            ConfirmTrainDeletePopUp deletePopUp = new ConfirmTrainDeletePopUp("Da li sigurno želite da obrišete ovu vožnju?");
+            deletePopUp.YesClicked += PopUpClicked;
+            deletePopUp.ShowDialog();
+        }
+
+        private void PopUpClicked(bool yes)
+        {
+            if (yes)
+            {
+                Timetable selRide = _timetableService.GetTimetableById(((ManagerTimetableDTO)TimetableData.SelectedItem).TimetableId);
+                _timetableService.DeleteRide(selRide.Id);
+                //bool isDeleted = TimetableCollection.Remove(createTimetableDTO(selRide));
+                TimetableCollection.Remove(TimetableCollection.Where(i => i.TimetableId == selRide.Id).Single());
+                TimetableData.ItemsSource = TimetableCollection;
+
+                OkPopUp okPopUp = new OkPopUp("Uspešno ste obrisali vožnju.");
+                okPopUp.ShowDialog();
+            }
         }
     }
 }

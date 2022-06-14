@@ -29,6 +29,11 @@ namespace ZeleznicaSrbije.API.Services {
             return trainLineCRUD.getTrainLineByMidleStations(midleStations);
         }
 
+        public bool DeleteTrainLine(int id)
+        {
+            return trainLineCRUD.DeleteTrainLine(id);
+        }
+      
         public List<UserTimeTableShowDTO> GetTrainLinesDTOs(string startPlace, string endPlace) {
             TrainsService trainService = new TrainsService();
             TimetableService timetableService = new TimetableService();

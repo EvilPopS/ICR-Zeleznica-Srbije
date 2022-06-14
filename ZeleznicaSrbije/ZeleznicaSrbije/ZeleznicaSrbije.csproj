@@ -91,14 +91,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\DTOs\ManagerTrainLineDTO.cs" />
     <Compile Include="API\DTOs\ShowTicketDTO.cs" />
     <Compile Include="API\DTOs\ManagerTimetableDTO.cs" />
     <Compile Include="API\DTOs\RelationDTO.cs" />
+    <Compile Include="API\Models\Place.cs" />
     <Compile Include="API\DTOs\UserTimeTableShowDTO.cs" />
     <Compile Include="API\Models\Seat.cs" />
     <Compile Include="API\Models\Station.cs" />
     <Compile Include="API\Services\LoginRegisterService.cs" />
     <Compile Include="API\Services\ManagerService.cs" />
+    <Compile Include="API\Services\PlaceService.cs" />
     <Compile Include="API\Services\RegularUserService.cs" />
     <Compile Include="API\Services\TicketsService.cs" />
     <Compile Include="API\Services\StationsService.cs" />
@@ -135,8 +138,14 @@
     <Compile Include="ManagerPages\TimeTablePage.xaml.cs">
       <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPages\TrainLinesPage.xaml.cs">
+      <DependentUpon>TrainLinesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\TrainsPage.xaml.cs">
       <DependentUpon>TrainsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPages\VisualizedTrainLines.xaml.cs">
+      <DependentUpon>VisualizedTrainLines.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
@@ -243,6 +252,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManagerPages\TrainLinesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\VisualizedTrainLines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -311,6 +328,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Database\DataFiles\managers.json" />
+    <None Include="Database\DataFiles\places.json" />
     <None Include="Database\DataFiles\regular_users.json" />
     <None Include="Database\DataFiles\stations.json" />
     <None Include="Database\DataFiles\tickets.json" />
@@ -388,6 +406,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\already-bought-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Assets\Images\already-reserved-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -395,6 +415,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\datetime-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\train-lines-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\shopping-cart-icon.png" />

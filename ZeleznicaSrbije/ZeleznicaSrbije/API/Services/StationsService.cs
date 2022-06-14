@@ -20,6 +20,8 @@ namespace ZeleznicaSrbije.API.Services
 
         }
 
+        
+
         public int getTravelTimeByPlaceOneAndTwo(string placeOne, string placeTwo)
         {
             foreach(Station station in _stations)
@@ -37,7 +39,11 @@ namespace ZeleznicaSrbije.API.Services
         {
             List<string> completePath = new List<string>();
             completePath.Add(startPoint);
-            foreach(string ms in midleStations) { completePath.Add(ms); };
+            if (!midleStations[0].Equals("Bez medjustanica"))
+            {
+                foreach (string ms in midleStations) { completePath.Add(ms); };
+            }
+            
             completePath.Add(endPoint);
             
             int minutes = 0;

@@ -3,10 +3,10 @@
   "Entities": [
     {
       "Id": 0,
-      "TrainServiceId": 0,
-      "TrainId": 2,
-      "Start": "05:45:00",
-      "End": "06:40:00",
+      "TrainServiceId": 1,
+      "TrainId": 4,
+      "Start": "09:53:00",
+      "End": "10:42:00",
       "IsDeleted": false
     },
     {
@@ -15,14 +15,6 @@
       "TrainId": 3,
       "Start": "10:30:00",
       "End": "11:27:00",
-      "IsDeleted": false
-    },
-    {
-      "Id": 2,
-      "TrainServiceId": 0,
-      "TrainId": 4,
-      "Start": "14:30:00",
-      "End": "15:27:00",
       "IsDeleted": false
     },
     {
