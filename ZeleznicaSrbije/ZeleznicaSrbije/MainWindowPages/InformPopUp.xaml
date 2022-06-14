@@ -1,0 +1,34 @@
+﻿<Window x:Class="ZeleznicaSrbije.MainWindowPages.InformPopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:ZeleznicaSrbije.MainWindowPages"
+        mc:Ignorable="d"
+        Height="230" 
+        Width="350"
+        MaxHeight="230"
+        MinHeight="230"
+        MaxWidth="350"
+        MinWidth="350"
+        Icon="../Assets/Images/exlamation-mark-icon.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="img" Height="40"/>
+
+        <TextBlock x:Name="messageTxt" Grid.Row="1" Margin="10 15 10 0" FontSize="16" TextAlignment="Center" TextWrapping="Wrap" />
+        
+        <Button Style="{StaticResource yesButton}" Margin="0 0 0 10" HorizontalAlignment="Center" Click="Ok_Clicked" Grid.Row="2" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 0" Width="80">
+                <Icon:PackIconMaterial Kind="CheckBold" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
+                <TextBlock Text="Ok" Margin="15 0 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
