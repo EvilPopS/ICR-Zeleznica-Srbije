@@ -29,7 +29,7 @@ namespace ZeleznicaSrbije {
                     WinContent.Content = new TicketsPage(_userData.Id);
                     break;
                 case "TRAIN_SCHEDULE":
-                    WinContent.Content = new TimetablePage();
+                    WinContent.Content = new TimetablePage(_userData);
                     break;
             }
         }

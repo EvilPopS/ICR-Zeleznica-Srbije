@@ -51,42 +51,5 @@
             </Button.Resources>
         </Button>
 
-        <Popup x:Name="errorPopUp" Placement="Center" Width="400" Height="180" >
-            <Border BorderBrush="Black" BorderThickness="3" CornerRadius="2">
-                <StackPanel Background="#919291">
-                    <Image Source="./Assets/Images/warning-sign-icon.png" Margin="0 5 0 0" Width="30" Height="28" VerticalAlignment="Bottom"/>
-                    <TextBlock x:Name="errorPopUpText" TextAlignment="Center" Margin="10 10 10 10" HorizontalAlignment="Center" Width="320" Height="auto" TextWrapping="WrapWithOverflow" FontSize="17" FontWeight="Bold" Foreground="Black"/>
-                    <Button Click="CloseErrorPopUp" FontWeight="Black" Margin="0 5 0 10" HorizontalAlignment="Center" Height="32"  Width="100" Foreground="Black">
-                        OK
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="TextElement.FontFamily" Value="#Fonts/#Dosis"/>
-                                <Setter Property="Background"  Value="White"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#DEE0DE"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Margin="20 5 20 5" 
-                                    HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Stretch"
-                                    CornerRadius="12"
-                                    Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"/>
-                                </Border>
-
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            </Border>
-        </Popup>
     </Grid>
 </Page>
