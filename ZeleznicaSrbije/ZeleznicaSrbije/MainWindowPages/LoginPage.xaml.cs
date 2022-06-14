@@ -21,10 +21,10 @@ namespace ZeleznicaSrbije.MainWindowPages {
             string email = emailInpField.Text;
             string password = passwordInpField.Password.ToString();
 
+            InformPopUp popUp = null;
             if (email == "" || password == "")
-                ShowErrorPopUp("Oba polja moraju biti popunjena!");
-
-            if (_loginService.TryLoginAsManager(email, password)) {
+                popUp = new InformPopUp("Oba polja moraju biti popunjena!", true);
+            else if (_loginService.TryLoginAsManager(email, password)) {
                 new ManagerWindow(email).Show();
                 _wind.Close();
             }
@@ -33,17 +33,8 @@ namespace ZeleznicaSrbije.MainWindowPages {
                 _wind.Close();
             }
             else
-                ShowErrorPopUp("Uneti podaci nisu tačni. \n Pokušajte ponovo.");
-        }
-        
-        private void ShowErrorPopUp(string message) {
-            errorPopUpText.Text = message;
-            errorPopUp.IsOpen = true;
-        }
-
-        private void CloseErrorPopUp(object sender, RoutedEventArgs e) {
-            errorPopUpText.Text = "";
-            errorPopUp.IsOpen = false;
+                popUp = new InformPopUp("Uneti podaci nisu tačni. \n Pokušajte ponovo.", true);
+            popUp?.ShowDialog();
         }
     }
 }
