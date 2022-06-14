@@ -1,181 +1,35 @@
 {
-  "NextInd": 1,
+  "NextInd": 2,
   "Entities": [
     {
       "Id": 0,
       "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
       "IsReserved": false,
       "IsBought": true,
       "IsActive": true,
-      "SeatNumber": "12"
+      "SeatNumber": "1",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
     },
     {
-      "Id": 0,
+      "Id": 1,
       "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": false,
-      "IsBought": true,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
+      "ValidityDate": "2022-06-14T00:00:00",
+      "Price": 100.0,
       "IsReserved": true,
       "IsBought": false,
       "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": true,
-      "IsBought": false,
-      "IsActive": true,
-      "SeatNumber": "12"
-    },
-    {
-      "Id": 0,
-      "UserId": 0,
-      "TimetableId": 0,
-      "ValidityDate": "2022-06-08T00:00:00+02:00",
-      "Price": 300.0,
-      "IsReserved": true,
-      "IsBought": false,
-      "IsActive": true,
-      "SeatNumber": "12"
+      "SeatNumber": "2",
+      "StartPlace": "Novi Sad",
+      "EndPlace": "Beograd",
+      "StartTime": "05:45:00",
+      "EndTime": "21:42:00",
+      "TrainNum": "2241"
     }
   ]
 }
