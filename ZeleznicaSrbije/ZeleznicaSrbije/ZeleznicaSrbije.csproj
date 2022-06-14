@@ -118,6 +118,9 @@
     <Compile Include="ManagerPages\AddNewRide.xaml.cs">
       <DependentUpon>AddNewRide.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPages\AddNewTrainLine.xaml.cs">
+      <DependentUpon>AddNewTrainLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\AddTrainWindow.xaml.cs">
       <DependentUpon>AddTrainWindow.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerPages\AddNewRide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPages\AddNewTrainLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

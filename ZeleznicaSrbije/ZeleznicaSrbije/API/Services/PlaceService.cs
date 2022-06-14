@@ -26,6 +26,20 @@ namespace ZeleznicaSrbije.API.Services
             return _places;
         }
 
+        public List<Place> getOnlyNamedPlaces()
+        {
+            List<Place> places = new List<Place>();
+            foreach(Place place in _places)
+            {
+                if (!place.PlaceName.Equals("noname"))
+                {
+                    places.Add(place);
+                }
+            }
+
+            return places;
+        }
+
         public Place getPlaceById(int Id)
         {
             foreach(Place place in _places)
@@ -73,6 +87,24 @@ namespace ZeleznicaSrbije.API.Services
             }
             return allIds;
 
+        }
+
+        public List<Place> getPossibleMiddleStations(Place startPlace, Place endPlace)
+        {
+            List<Place> allPlaces = getOnlyNamedPlaces();
+            
+
+            List<Place> possibleMiddleStations = new List<Place>();
+
+            foreach(Place place in allPlaces)
+            {
+                if (place.X > startPlace.X && place.X < endPlace.X)
+                {
+                    possibleMiddleStations.Add(place);
+                }
+            }
+
+            return possibleMiddleStations;
         }
     }
 }
