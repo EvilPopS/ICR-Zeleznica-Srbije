@@ -5,6 +5,7 @@ using System.Windows.Media.Imaging;
 using ZeleznicaSrbije.API.DTOs;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.RegularUserPages {
     public partial class BuyReserveTicketWindow : Window {
@@ -49,11 +50,27 @@ namespace ZeleznicaSrbije.RegularUserPages {
         }
 
         public void Submit_Click(object sender, EventArgs e) {
-            TicketsService ticketsServise = new TicketsService();
             DateTime valDate = DateTime.ParseExact(validityDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            ticketsServise.MakeNewTicket(_userData.Id, _startPlace, _endPlace, _dto, valDate, _isBuying);
+            if (!ValidateDate(valDate))
+                return;
+
+            TicketsService ticketsService = new TicketsService();
+            ticketsService.MakeNewTicket(_userData.Id, _startPlace, _endPlace, _dto, valDate, _isBuying);
+            InformPopUp popUp = new InformPopUp(
+                (_isBuying ? "Kupovina" : "Rezervacija") + "je uspešno izvršena! Kartu možete da nađete na stranici za pregled kupljenih i rezervisanih karata.",
+                false
+            );
+            Close();
+            popUp.ShowDialog();
         }
 
+        private bool ValidateDate(DateTime valDate) {
+            InformPopUp popUp = null;
+            if (valDate < DateTime.Now.Date)
+                popUp = new InformPopUp("Izaberite datum koji nije iz prošlosti.", true);
+            popUp?.ShowDialog();
+            return popUp == null;
+        }   
 
     }
 }

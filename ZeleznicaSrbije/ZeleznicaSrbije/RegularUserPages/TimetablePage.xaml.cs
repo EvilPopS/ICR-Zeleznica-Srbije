@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using ZeleznicaSrbije.API.DTOs;
 using ZeleznicaSrbije.API.Models;
 using ZeleznicaSrbije.API.Services;
+using ZeleznicaSrbije.MainWindowPages;
 
 namespace ZeleznicaSrbije.RegularUserPages {
     public partial class TimetablePage : Page {
@@ -24,8 +25,13 @@ namespace ZeleznicaSrbije.RegularUserPages {
             _selectedStartPlace = ((ComboBoxItem)StartPlaceBox.SelectedItem).Content.ToString();
             _selectedEndPlace = ((ComboBoxItem)EndPlaceBox.SelectedItem).Content.ToString();
 
-            if (_selectedStartPlace == "" || _selectedEndPlace == "" || _selectedStartPlace == _selectedEndPlace) { 
-            }
+            InformPopUp popUp = null;
+            if (_selectedStartPlace == "Nije izabrano" || _selectedEndPlace == "Nije izabrano")
+                popUp = new InformPopUp("Molimo vas izaberite i početnu i krajnju destinaciju putovanja.", true);
+            else if (_selectedStartPlace == _selectedEndPlace)
+                popUp = new InformPopUp("Izabrane destinacije moraju biti različite.", true);
+
+            popUp?.ShowDialog();
 
             DTOsList = new ObservableCollection<UserTimeTableShowDTO>(
                 _trainLineService.GetTrainLinesDTOs(_selectedStartPlace, _selectedEndPlace)
@@ -35,7 +41,7 @@ namespace ZeleznicaSrbije.RegularUserPages {
 
         private void Buy_Click(object sender, RoutedEventArgs e) {
             UserTimeTableShowDTO selectedRow = ((UserTimeTableShowDTO)TimeTablesList.SelectedItem);
-            if (selectedRow == null)
+            if (!CheckIfBuyReserveClickable(selectedRow))
                 return;
 
             BuyReserveTicketWindow popUpWind = new BuyReserveTicketWindow(_userData, selectedRow, true, _selectedStartPlace, _selectedEndPlace);
@@ -44,11 +50,20 @@ namespace ZeleznicaSrbije.RegularUserPages {
 
         private void Reserve_Click(object sender, RoutedEventArgs e) {
             UserTimeTableShowDTO selectedRow = ((UserTimeTableShowDTO)TimeTablesList.SelectedItem);
-            if (selectedRow == null)
+            if (!CheckIfBuyReserveClickable(selectedRow))
                 return;
 
             BuyReserveTicketWindow popUpWind = new BuyReserveTicketWindow(_userData, selectedRow, false, _selectedStartPlace, _selectedEndPlace);
             popUpWind.ShowDialog();
         }
+
+        private bool CheckIfBuyReserveClickable(UserTimeTableShowDTO selectedRow) {
+            InformPopUp popUp = null;
+            if (selectedRow == null)
+                popUp = new InformPopUp("Izaberite jednu voznju iz prikaza pa onda pritisnite dugme za kupovinu/rezervaciju karte za tu voznju.", true);
+            popUp?.ShowDialog();
+            return popUp == null;
+        }
+
     }
 }
