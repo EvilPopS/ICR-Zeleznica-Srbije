@@ -16,8 +16,8 @@
             
         </ListView>-->
         <StackPanel Orientation="Horizontal">
-            <Label Content="Broj voza" Margin="45 40 0 50" FontSize="14"/>
-            <Label Content="Kapacitet" Margin="70 40 0 50" FontSize="14"/>
+            <Label Content="Broj voza" Margin="45 40 0 50" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Kapacitet" Margin="70 40 0 50" FontSize="14" FontWeight="Bold"/>
             <Button Style="{StaticResource addButton}" Margin="330 0 0 300" Click="addNewtrainButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Icon:PackIconMaterial Kind="Plus" HorizontalAlignment="Right" Margin="0 4 8 0" Width="11" Height="11"/>
