@@ -8,12 +8,12 @@ Aplikacija moze da se pokrene na sledeca 2 nacina:
   2) preko editora Visual Studio klikom na zelenu strelicu
 
 
-Prijava za menadzera: {
-  email: admin@gmail.com
-  sifra: sifra123
-}
+Prijava za menadzera: {  
+&emsp; email: admin@gmail.com  
+&emsp; sifra: sifra123  
+}  
 
-Prijava za obicnog korisnika: {
-  email: user1@gmail.com
-  sifra: sifra123
-}
+Prijava za obicnog korisnika: {  
+&emsp; email: user1@gmail.com  
+&emsp; sifra: sifra123  
+}  
